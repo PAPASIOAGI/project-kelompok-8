@@ -126,3 +126,14 @@ footer {
     height: 180px;
     object-fit: cover;
 }
+
+.navbar {
+    transition: top 0.4s;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: -70px; /* Sembunyikan navbar di atas layar */
+}
+.navbar.show-navbar {
+    top: 0; /* Tampilkan navbar */
+}
