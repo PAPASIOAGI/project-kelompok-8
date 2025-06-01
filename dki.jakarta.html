@@ -1,86 +1,167 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anjungan DKI Jakarta - Travel Budaya</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="MAIN.CSS">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anjungan DKI Jakarta - Travel Budaya</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="dki jakarta.css">
+  <link rel="stylesheet" href="dki jakarta.js">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
-        <div class="container">
-            <a class="navbar-brand" href="MAIN.HTML">Travel Budaya</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="MAIN.HTML">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="dki.jakarta.html">DKI JAKARTA</a></li>
-                    <li class="nav-item"><a class="nav-link" href="jawa barat.html">JAWA BARAT</a></li>
-                    <li class="nav-item"><a class="nav-link" href="MUSEUM INDONESIA.HTML">Museum Indonesia</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+    <div class="container">
+      <a class="navbar-brand" href="main.html">Travel Budaya</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="MAIN.HTML">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link active" href="dki.jakarta.html">DKI Jakarta</a></li>
+          <li class="nav-item"><a class="nav-link" href="jawa barat.html">Jawa Barat</a></li>
+          <li class="nav-item"><a class="nav-link" href="MUSEUM INDONESIA.HTML">Museum Indonesia</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Hero DKI Jakarta -->
-    <section class="hero d-flex align-items-center justify-content-center text-center" style="background-image:url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80');">
-        <div class="container hero-content">
-            <h1 class="display-3 fw-bold animate-fadein">Anjungan DKI Jakarta</h1>
-            <p class="lead animate-fadein" style="animation-delay:0.3s">Mengenal lebih dekat budaya dan kekayaan DKI Jakarta di TMII</p>
-        </div>
-    </section>
+  <!-- Hero Section -->
+  <section class="hero d-flex align-items-center justify-content-center text-center text-white" style="height: 60vh; background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Ondel-ondel_Jakarta.JPG/1280px-Ondel-ondel_Jakarta.JPG'); background-size: cover; background-position: center;">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Anjungan DKI Jakarta</h1>
+      <p class="lead">Menelusuri budaya khas Betawi di Taman Mini Indonesia Indah</p>
+    </div>
+  </section>
 
-    <!-- Konten Daerah DKI Jakarta -->
-    <main class="container my-5">
-        <div class="row g-4">
-            <div class="col-md-12">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h3 class="card-title text-primary">Keragaman Budaya DKI Jakarta</h3>
-                        <ul class="list-group list-group-flush mb-3">
-                            <li class="list-group-item"><strong>Bahasa:</strong> Betawi, Indonesia</li>
-                            <li class="list-group-item"><strong>Pakaian Adat:</strong> Baju Sadariah, Kebaya Encim</li>
-                            <li class="list-group-item"><strong>Tarian Tradisional:</strong> Tari Topeng, Tari Yapong</li>
-                            <li class="list-group-item"><strong>Makanan Khas:</strong> Kerak Telor, Soto Betawi</li>
-                            <li class="list-group-item"><strong>Rumah Adat:</strong> Rumah Kebaya</li>
-                            <li class="list-group-item"><strong>Upacara Adat:</strong> Perayaan Lebaran Betawi, Palang Pintu</li>
-                        </ul>
-                        <h5 class="mt-4">Daerah di DKI Jakarta:</h5>
-                        <ul>
-                            <li>Jakarta Pusat</li>
-                            <li>Jakarta Utara</li>
-                            <li>Jakarta Selatan</li>
-                            <li>Jakarta Barat</li>
-                            <li>Jakarta Timur</li>
-                            <li>Kepulauan Seribu</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+  <!-- Content Section -->
+  <main class="container my-5">
+    <h2 class="text-center mb-4">10 Spot Budaya di Anjungan DKI Jakarta</h2>
+    <div class="row g-4">
+      <!-- 1 -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow">
+          <img src="Anjungan Jakarta.jpg" class="card-img-top" alt="Anjungan Jakarta">
+          <div class="card-body">
+            <h5 class="card-title">Anjungan betawi</h5>
+            <p class="card-text">Di Taman Mini Indonesia Indah, berdiri bangunan ikonik milik Provinsi DKI Jakarta yang langsung mencuri perhatian. 
+                Dengan bentuk atap unik yang terinspirasi dari Rumah Kebaya—rumah tradisional khas Betawi—bangunan ini menggambarkan kearifan lokal warga Jakarta,
+                 terutama dalam hal keramahan dan keterbukaan.
 
-    <!-- Google Maps Lokasi Anjungan DKI Jakarta TMII -->
-    <section class="container mb-5">
-        <h4 class="text-center mb-3">Lokasi Anjungan DKI Jakarta di TMII</h4>
-        <div class="ratio ratio-16x9">
-            <iframe 
-                src="https://www.google.com/maps?q=Anjungan+DKI+Jakarta+TMII&output=embed"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer text-center">
-        <div class="container">
-            <p class="mb-0">&copy; 2025 Travel Budaya | Kelompok 8</p>
+            </p>
+          </div>
         </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js for main.js"></script>
+      </div>
+      <!-- 2 -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow">
+          <img src="Rumah Kebaya.jpeg" class="card-img-top" alt="Rumah Kebaya">
+          <div class="card-body">
+            <h5 class="card-title">Rumah Kebaya</h5>
+            <p class="card-text">Rumah Kebaya adalah salah satu bentuk rumah tradisional Betawi yang paling dikenal.
+                 Namanya berasal dari bentuk atapnya yang menyerupai lipatan kebaya saat dilihat dari samping.
+                  Ciri khas rumah ini terletak pada serambinya yang luas, tempat keluarga berkumpul dan berinteraksi dengan tetangga—sebuah simbol kehidupan sosial masyarakat Betawi yang hangat dan terbuka.
+
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- 3 -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow">
+          <img src="alat musik.jpeg" class="card-img-top" alt="Gambang Kromong">
+          <div class="card-body">
+            <h5 class="card-title">Gambang Kromong</h5>
+            <p class="card-text">Di balik kaca Anjungan DKI Jakarta, tersimpan rapi satu set alat musik tradisional yang menjadi kebanggaan warga Betawi: 
+                Gambang Kromong. Perpaduan unik antara unsur gamelan Jawa dan musik Tionghoa ini menghasilkan irama khas yang riang dan meriah,
+                 sering kali mengiringi pertunjukan seni seperti Lenong dan Tari Topeng.
+                </p>
+          </div>
+        </div>
+      </div>
+      <!-- 4 -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow">
+          <img src="topeng.jpeg" class="card-img-top" alt="Topeng Betawi">
+          <div class="card-body">
+            <h5 class="card-title">Topeng Betawi</h5>
+            <p class="card-text">
+                Topeng Betawi merupakan bagian dari kesenian tradisional Tari Topeng Betawi. S
+                etiap topeng mewakili karakter berbeda, seperti Panji (bijak dan tenang), Samba (ceria), Patih (tegas), Tumenggung (gagah), dan Kelana (angkuh dan jahat). Tak hanya sebagai alat pertunjukan, 
+                topeng-topeng ini juga menyimpan nilai budaya dan filosofi masyarakat Betawi.
+                
+                
+                
+                .</p>
+          </div>
+        </div>
+      </div>
+      <!-- 5 -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow">
+          <img src="img/gerbang-jakarta.jpg" class="card-img-top" alt="Gerbang Anjungan">
+          <div class="card-body">
+            <h5 class="card-title">Gerbang Anjungan</h5>
+            <p class="card-text">Pintu utama menuju Anjungan DKI Jakarta yang menampilkan ornamen khas Betawi dengan nuansa tempo dulu.</p>
+          </div>
+        </div>
+      </div>
+      <!-- 6 -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow">
+          <img src="img/miniatur-kota-tua.jpg" class="card-img-top" alt="Miniatur Kota Tua">
+          <div class="card-body">
+            <h5 class="card-title">Miniatur Kota Tua</h5>
+            <p class="card-text">Replika bangunan kolonial dari kawasan Kota Tua Jakarta seperti Museum Fatahillah dan Kantor Pos.</p>
+          </div>
+        </div>
+      </div>
+      <!-- 7 -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow">
+          <img src="img/tanjidor.jpg" class="card-img-top" alt="Tanjidor">
+          <div class="card-body">
+            <h5 class="card-title">Musik Tanjidor</h5>
+            <p class="card-text">Ansambel musik khas Betawi yang menggunakan alat musik tiup dan perkusi, sering dimainkan saat hajatan atau acara budaya.</p>
+          </div>
+        </div>
+      </div>
+      <!-- 8 -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow">
+          <img src="img/lenong.jpg" class="card-img-top" alt="Lenong">
+          <div class="card-body">
+            <h5 class="card-title">Pertunjukan Lenong</h5>
+            <p class="card-text">Teater rakyat khas Betawi yang penuh humor dan kritik sosial, dibawakan dalam bahasa Betawi.</p>
+          </div>
+        </div>
+      </div>
+      <!-- 9 -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow">
+          <img src="img/bajaj.jpg" class="card-img-top" alt="Bajaj Jakarta">
+          <div class="card-body">
+            <h5 class="card-title">Replika Transportasi Bajaj</h5>
+            <p class="card-text">Bajaj oranye yang legendaris menjadi bagian dari sejarah transportasi Jakarta dan ditampilkan dalam bentuk replika.</p>
+          </div>
+        </div>
+      </div>
+      <!-- 10 -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow">
+          <img src="img/ruang-pameran.jpg" class="card-img-top" alt="Ruang Pameran Jakarta">
+          <div class="card-body">
+            <h5 class="card-title">Ruang Pameran Jakarta</h5>
+            <p class="card-text">Menampilkan sejarah ibu kota dari masa ke masa, termasuk peta, perkembangan kota, dan peran Jakarta sebagai pusat pemerintahan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

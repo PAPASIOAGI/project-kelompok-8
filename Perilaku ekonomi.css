@@ -1,0 +1,18 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.hero {
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.card-title {
+  color: #198754; /* warna hijau Bootstrap success */
+  font-weight: bold;
+}
+
+.card-text {
+  text-align: justify;
+}
