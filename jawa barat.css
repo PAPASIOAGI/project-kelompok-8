@@ -1,7 +1,7 @@
 /* jawa barat.css */
 
 body {
-    background-color: #f7fafc;
+    background-color: #ffffff;
     font-family: 'Segoe UI', Arial, sans-serif;
 }
 
@@ -49,7 +49,7 @@ h2 {
     min-height: 320px;
     background-size: cover;
     background-position: center;
-    color: #fff;
+    color: #ffffff;
     position: relative;
     border-radius: 0 0 24px 24px;
     margin-bottom: 2rem;
