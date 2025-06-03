@@ -4,56 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Travel Budaya</title>
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="MAIN.CSS"/>
+
 </head>
 <body style="overflow-x:hidden;">
   <!-- Splash Screen -->
-  <div id="splash" style="position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:white;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 0.8s;">
-    <img src="TMII_Logo_-_Blue.svg.png" alt="TMII Logo" style="width:300px;animation:zoomIn 1.2s cubic-bezier(.68,-0.55,.27,1.55);">
-    <div style="display:flex;align-items:center;margin-top:20px;">
-      <img src="Document from Novianto Mardalis 😇🫰.png" alt="TMII Mini" style="width:32px;height:32px;margin-right:10px;animation:fadeIn 1.2s ease-in;">
-      <h3 style="margin:0;animation:fadeIn 1.2s ease-in;color:#333;">Kelompok 8 Anjungan Jawa Barat dan DKI Jakarta</h3>
+  <div id="splash">
+    <img src="TMII_Logo_-_Blue.svg.png" alt="TMII Logo" style="width:120px;animation:zoomIn 1.2s cubic-bezier(.68,-0.55,.27,1.55);">
+    <h3 style="margin-top:20px;animation:fadeIn 1.2s ease-in;color:#00d5f3;">ARUZ</h3>
+    <div style="display:flex;align-items:center;margin-top:10px;animation:fadeIn 1.2s;">
+      <img src="Document from Novianto Mardalis 😇🫰.png" alt="TMII Mini" style="width:32px;height:32px;margin-right:10px;">
+      <span style="font-size:1.1rem;">Kelompok 8 Anjungan Jawa Barat & DKI Jakarta</span>
     </div>
   </div>
 
   <div class="d-flex flex-column flex-md-row">
-    <!-- Sidebar -->
-    <nav id="sidebar" class="bg-light border-end p-3 shadow-sm" style="min-width:250px;">
-      <h4 class="fw-bold mb-3">Travel Budaya</h4>
-      <!-- Beranda di bawah Travel Budaya dan di atas Eksplorasi Daerah -->
-
-        <a href="MAIN.HTML" class="nav-link fw-bold" style="color:#0d6efd;">Beranda</a>
-      </li>
-      <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link fw-semibold" data-bs-toggle="collapse" href="#menuDaerah" role="button" style="color:#0d6efd;">Eksplorasi Daerah</a>
-          <div class="collapse show ps-3" id="menuDaerah">
-            <a href="dki.jakarta.html" class="nav-link">DKI Jakarta</a>
-            <a href="jawa barat.html" class="nav-link">Jawa Barat</a>
-            <a href="MUSEUM INDONESIA.HTML" class="nav-link">Museum Indonesia</a>
-            <a href="Perilaku Ekonomi.html" class="nav-link">Perilaku Ekonomi</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a href="#anggota" class="nav-link fw-semibold">Anggota Kelompok</a>
-        </li>
-        <li class="nav-item">
-          <a href="LKPD.HTML" class="nav-link fw-semibold">LKPD</a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Main Content -->    <!-- ...existing code... -->
     <!-- Sidebar Start -->
     <nav id="sidebar" class="bg-light border-end p-3 shadow-sm" style="min-width:250px;">
-      <h4 class="fw-bold mb-3">
-        <a href="MAIN.HTML" class="text-decoration-none text-dark">Travel Budaya</a>
-      </h4>
+      <div class="d-flex align-items-center mb-3">
+        <span class="fw-bold fs-5" style="color:#00d5f3;">ARUZ</span>
+      </div>
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link fw-semibold" data-bs-toggle="collapse" href="#menuDaerah" role="button">Eksplorasi Daerah</a>
+          <a href="MAIN.HTML" class="nav-link fw-semibold">Beranda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" data-bs-toggle="collapse" href="#menuDaerah" role="button" aria-expanded="true">Eksplorasi Daerah</a>
           <div class="collapse show ps-3" id="menuDaerah">
             <a href="dki.jakarta.html" class="nav-link">DKI Jakarta</a>
             <a href="jawa barat.html" class="nav-link">Jawa Barat</a>
@@ -70,105 +47,100 @@
       </ul>
     </nav>
     <!-- Sidebar End -->
-    <!-- ...existing code... -->
-    <main class="flex-grow-1 p-4">
+
+    <!-- Main Content -->
+    <main class="flex-grow-1 p-4" style="background:#f4f6fb;">
       <section class="text-center mb-5">
-        <h1 class="display-5 fw-bold">Eksplorasi Budaya Indonesia</h1>
-        <p class="lead">Temukan keindahan dan keragaman budaya Indonesia bersama Travel Budaya!</p>
-        <a href="#daerah" class="btn btn-primary btn-lg">Mulai Jelajah</a>
+        <h1 class="display-5 fw-bold mb-2">Eksplorasi Budaya Indonesia</h1>
+        <p class="lead mb-4">Temukan keindahan dan keragaman budaya Indonesia bersama Travel Budaya!</p>
+        <a href="#daerah" class="btn btn-primary btn-lg shadow">Mulai Jelajah</a>
       </section>
 
       <!-- Eksplorasi Daerah -->
-      <div id="daerah" class="row row-cols-1 row-cols-md-2 g-4">
+      <div id="daerah" class="row row-cols-1 row-cols-md-3 g-4">
         <!-- Jakarta -->
         <div class="col">
-          <div class="card h-100 shadow-sm">
+          <div class="card h-100 shadow-sm border-0">
             <img src="anjungan dki jakarta.jpg" class="card-img-top" alt="DKI Jakarta">
             <div class="card-body">
               <h5 class="card-title text-primary">DKI Jakarta</h5>
-              <ul class="list-group list-group-flush">
+              <ul class="list-group list-group-flush mb-3">
                 <li class="list-group-item"><strong>Bahasa:</strong> Betawi, Indonesia</li>
                 <li class="list-group-item"><strong>Pakaian Adat:</strong> Baju Sadariah, Kebaya Encim</li>
                 <li class="list-group-item"><strong>Tarian Tradisional:</strong> Tari Topeng, Tari Yapong</li>
               </ul>
-              <a href="dki.jakarta.html" class="btn btn-outline-primary mt-3">Lihat Detail</a>
+              <a href="dki.jakarta.html" class="btn btn-outline-primary w-100">Lihat Detail</a>
             </div>
           </div>
         </div>
-
         <!-- Jawa Barat -->
         <div class="col">
-          <div class="card h-100 shadow-sm">
+          <div class="card h-100 shadow-sm border-0">
             <img src="Anjungan-Jawa-Barat-scaled-1500x1000.jpg" class="card-img-top" alt="Jawa Barat">
             <div class="card-body">
               <h5 class="card-title text-danger">Jawa Barat</h5>
-              <ul class="list-group list-group-flush">
+              <ul class="list-group list-group-flush mb-3">
                 <li class="list-group-item"><strong>Bahasa:</strong> Sunda</li>
                 <li class="list-group-item"><strong>Pakaian Adat:</strong> Baju Pangsi, Kebaya Sunda</li>
                 <li class="list-group-item"><strong>Tarian Tradisional:</strong> Tari Jaipong, Tari Merak</li>
               </ul>
-              <a href="jawa barat.html" class="btn btn-outline-danger mt-3">Lihat Detail</a>
+              <a href="jawa barat.html" class="btn btn-outline-danger w-100">Lihat Detail</a>
             </div>
           </div>
         </div>
-
         <!-- Museum Indonesia -->
         <div class="col">
-          <div class="card h-100 shadow-sm">
+          <div class="card h-100 shadow-sm border-0">
             <img src="Museum-Indonesia-TMII-Jakarta-1536x864.jpg" class="card-img-top" alt="Museum Indonesia">
             <div class="card-body">
               <h5 class="card-title text-success">Museum Indonesia TMII</h5>
-              <ul class="list-group list-group-flush">
+              <ul class="list-group list-group-flush mb-3">
                 <li class="list-group-item"><strong>Lokasi:</strong> Kompleks TMII, Jakarta Timur</li>
                 <li class="list-group-item"><strong>Diresmikan:</strong> 1980</li>
               </ul>
-              <a href="MUSEUM INDONESIA.HTML" class="btn btn-outline-success mt-3">Lihat Detail</a>
+              <a href="MUSEUM INDONESIA.HTML" class="btn btn-outline-success w-100">Lihat Detail</a>
             </div>
           </div>
         </div>
       </div>
-
-
-
-
 
       <!-- Anggota -->
       <section id="anggota" class="mt-5">
         <h2 class="text-center fw-bold mb-4">Anggota Kelompok</h2>
         <div class="row row-cols-2 row-cols-md-4 g-4">
           <div class="col">
-            <div class="card text-center shadow-sm">
+            <div class="card anggota-card text-center shadow-sm">
               <img src="DSC_9886 (1).jpg" class="card-img-top" alt="Atayya">
               <div class="card-body">
-                <h6>Atayya Riziq Abimanyu</h6>
-                <small>Absen: -</small>
+                <h6 class="fw-semibold mb-1">Atayya Riziq Abimanyu</h6>
+                <small>Absen: 11</small>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card text-center shadow-sm">
-              <img src="DSC_9928 (1).jpg" class="card-img-top" alt="Raysha">
+            <div class="card anggota-card text-center shadow-sm">
+              <img src="DSC_9928 (1).jpg" class="card-img-top mx-auto" alt="Raysha">
               <div class="card-body">
-                <h6>Raysha Putera</h6>
-                <small>Absen: -</small>
+                <h6 class="fw-semibold mb-1">Raysha Putera</h6>
+                <small>Absen: 33</small>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card text-center shadow-sm">
-              <img src="DSC_9932 (1).jpg" class="card-img-top" alt="Rifaiz">
+            <div class="card anggota-card text-center shadow-sm">
+              <img src="DSC_9932 (1).jpg" class="card-img-top mx-auto" alt="Rifaiz">
               <div class="card-body">
-                <h6>Rifaiz Shafwan Pratrama</h6>
-                <small>Absen: -</small>
+                <h6 class="fw-semibold mb-1">Rifaiz Shafwan Pratrama</h6>
+                <small>Absen: 35</small>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card text-center shadow-sm">
-              <img src="DSC_9934 (1).jpg" class="card-img-top" alt="Ubay">
+            <div class="card anggota-card text-center shadow-sm">
+              <img src="DSC_9934 (1).jpg" class="card-img-top mx-auto" alt="Ubay">
               <div class="card-body">
-                <h6>Ubay Rafif Defanza</h6>
-                <small>Absen: -</small>
+                <h6 class="fw-semibold mb-1">Ubay Rafif Defanza</h6>
+                <small>Absen: 36</small>
               </div>
             </div>
           </div>
@@ -177,42 +149,48 @@
     </main>
   </div>
 
-  <footer class="text-center py-4 border-top mt-5">
+  <footer class="text-center py-4 border-top mt-5 bg-white">
     <p class="mb-0">&copy; 2025 Travel Budaya | Kelompok 8</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
+    // Splash Screen
     window.addEventListener('DOMContentLoaded', function() {
       setTimeout(function() {
         document.getElementById('splash').style.opacity = 0;
         setTimeout(function() {
           document.getElementById('splash').style.display = 'none';
         }, 800);
-      }, 1500); // Splash tampil 1.5 detik
+      }, 1200);
     });
-  </script>
-  <style>
-    
-  </style>
-  <script>
-  const sidebar = document.getElementById('sidebar');
-  const mainContent = document.querySelector('main');
-  sidebar.addEventListener('mouseenter', () => {
-    sidebar.classList.add('show');
-    if(mainContent) mainContent.classList.add('main-content-blur');
-  });
-  sidebar.addEventListener('mouseleave', () => {
-    sidebar.classList.remove('show');
-    if(mainContent) mainContent.classList.remove('main-content-blur');
-  });
-  // Tampilkan sidebar saat mouse di sisi kiri layar
-  document.addEventListener('mousemove', function(e) {
-    if (e.clientX < 30) {
-      sidebar.classList.add('show');
-      if(mainContent) mainContent.classList.add('main-content-blur');
+
+    // Sidebar blur effect
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.querySelector('main');
+    if(sidebar && mainContent){
+      sidebar.addEventListener('mouseenter', () => {
+        mainContent.classList.add('main-content-blur');
+      });
+      sidebar.addEventListener('mouseleave', () => {
+        mainContent.classList.remove('main-content-blur');
+      });
     }
-  });
+
+    // Sidebar show/hide on mouse position
+    document.addEventListener('mousemove', function(e) {
+      if (e.clientX <= 40) {
+        sidebar.classList.add('sidebar-visible');
+      } else if (!sidebar.matches(':hover')) {
+        sidebar.classList.remove('sidebar-visible');
+      }
+    });
+    sidebar.addEventListener('mouseleave', function() {
+      sidebar.classList.remove('sidebar-visible');
+    });
+    sidebar.addEventListener('mouseenter', function() {
+      sidebar.classList.add('sidebar-visible');
+    });
   </script>
 </body>
 </html>

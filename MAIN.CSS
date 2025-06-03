@@ -1,4 +1,4 @@
-zbody {
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -34,6 +34,102 @@ main {
     margin-top: 0;
 }
 
+/* Splash Screen */
+#splash {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #e0e7ff 0%, #fff 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s;
+}
+@keyframes zoomIn {
+    0% { transform: scale(0.7); }
+    100% { transform: scale(1); }
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Sidebar */
+#sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  min-width: 250px;
+  max-width: 300px;
+  background: #f8fafc;
+  z-index: 1050;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+}
+#sidebar.sidebar-visible {
+  transform: translateX(0);
+}
+#sidebar .nav-link.active,
+#sidebar .nav-link:hover {
+    background: #e0e7ff;
+    color: #0d6efd !important;
+    border-radius: 8px;
+}
+#sidebar .sidebar-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8fafc;
+    color: #222;
+}
+
+/* Blur effect for main content */
+.main-content-blur {
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+/* Card */
+.card-img-top {
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Anggota */
+.anggota-card img {
+    width: 100%;
+    height: 220px;           /* Lebih tinggi dan besar */
+    object-fit: cover;
+    object-position: top;    /* Fokus ke bagian atas foto */
+    border-radius: 12px;
+    margin-top: 16px;
+}
+.anggota-card {
+    border: none;
+    background: #f8fafc;
+}
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+  #sidebar {
+    min-width: 70vw;
+  }
+}
+
+/* Footer */
 footer {
     background: #343a40;
     color: #fff;
@@ -148,24 +244,3 @@ footer {
       0% { opacity: 0; transform: translateY(20px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-    #sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    transform: translateX(-100%);
-    transition: transform 0.3s;
-    z-index: 1000;
-  }
-  #sidebar.show {
-    transform: translateX(0);
-  }
-  .main-content-blur {
-    filter: blur(2px);
-    pointer-events: none;
-  }
-  @media (max-width: 768px) {
-    #sidebar {
-      min-width: 70vw;
-    }
-  }
