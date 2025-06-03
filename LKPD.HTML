@@ -6,47 +6,44 @@
   <title>LKPD - Travel Budaya</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <style>
-    /* Sidebar animasi: sembunyi di kiri, muncul saat hover */
-    #sidebar {
+    body {
+      padding-bottom: 100px;
+    }
+    .bottom-navbar {
       position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      min-width: 250px;
-      background: #f8f9fa;
-      border-right: 1px solid #dee2e6;
-      box-shadow: 2px 0 8px rgba(0,0,0,0.04);
-      transform: translateX(-220px);
-      transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55);
-      z-index: 1040;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      padding: 10px 30px;
+      z-index: 1050;
     }
-    #sidebar.show {
-      transform: translateX(0);
+    .bottom-navbar a {
+      margin: 0 15px;
+      font-weight: 500;
+      color: #0d6efd;
+      text-decoration: none;
     }
-    .main-content-blur {
-      filter: blur(2px);
-      transition: filter 0.3s;
-    }
-    @media (max-width: 768px) {
-      #sidebar {
-        min-width: 180px;
-        transform: translateX(-150px);
-      }
-      #sidebar.show {
-        transform: translateX(0);
-      }
+    .bottom-navbar a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body style="overflow-x:hidden;">
   <div class="d-flex flex-column flex-md-row">
     <!-- Sidebar -->
-    <nav id="sidebar" class="bg-light border-end p-3 shadow-sm show"><!-- Tambahkan class show agar sidebar langsung muncul -->
-      <h4 class="fw-bold mb-3">Travel Budaya</h4>
-      <a href="MAIN.HTML" class="nav-link fw-bold" style="color:#0d6efd;">Beranda</a>
-      <ul class="nav flex-column mt-2">
+   <nav id="sidebar" class="bg-light border-end p-3 shadow-sm" style="min-width:250px;">
+      <div class="d-flex align-items-center mb-3">
+        <span class="fw-bold fs-5" style="color:#00d5f3;">ARUZ</span>
+      </div>
+      <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link fw-semibold" data-bs-toggle="collapse" href="#menuDaerah" role="button" style="color:#0d6efd;">Eksplorasi Daerah</a>
+          <a href="MAIN.HTML" class="nav-link fw-semibold">Beranda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" data-bs-toggle="collapse" href="#menuDaerah" role="button" aria-expanded="true">Eksplorasi Daerah</a>
           <div class="collapse show ps-3" id="menuDaerah">
             <a href="dki.jakarta.html" class="nav-link">DKI Jakarta</a>
             <a href="jawa barat.html" class="nav-link">Jawa Barat</a>
@@ -68,33 +65,52 @@
       <section class="text-center mb-5">
         <h1 class="display-5 fw-bold">LKPD</h1>
         <p class="lead">Lembar Kerja Peserta Didik yang berkaitan dengan eksplorasi budaya Indonesia.</p>
-        <!-- Tambahkan konten LKPD di sini -->
       </section>
+
+      <!-- Kartu Navigasi -->
+      <div class="row g-4 mb-5 text-center">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Penyelesaian</h5>
+              <p class="card-text">Lihat hasil eksplorasi budaya kelompok kamu.</p>
+              <a href="penyelesaian.html" class="btn btn-primary">Lihat</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Poster</h5>
+              <p class="card-text">Poster kreatif hasil observasi budaya daerah.</p>
+              <a href="poster.html" class="btn btn-success">Lihat</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Dokumentasi</h5>
+              <p class="card-text">Kumpulan foto kegiatan eksplorasi budaya.</p>
+              <a href="dokumentasi.html" class="btn btn-warning text-white">Lihat</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navbar Bawah Tengah -->
+      <div class="bottom-navbar d-flex justify-content-center align-items-center">
+        <a href="penyelesaian.html">Penyelesaian</a>
+        <a href="poster.html">Poster</a>
+        <a href="dokumentasi.html">Dokumentasi</a>
+      </div>
+
+      <footer class="text-center py-4 border-top mt-5">
+        <p class="mb-0">&copy; 2025 Travel Budaya | Kelompok 8</p>
+      </footer>
     </main>
   </div>
 
-  <footer class="text-center py-4 border-top mt-5">
-    <p class="mb-0">&copy; 2025 Travel Budaya | Kelompok 8</p>
-  </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const sidebar = document.getElementById('sidebar');
-    const mainContent = document.querySelector('main');
-    // Sidebar langsung muncul, hilang jika mouse keluar, muncul jika hover atau mouse di kiri layar
-    sidebar.addEventListener('mouseenter', () => {
-      sidebar.classList.add('show');
-      if(mainContent) mainContent.classList.add('main-content-blur');
-    });
-    sidebar.addEventListener('mouseleave', () => {
-      sidebar.classList.remove('show');
-      if(mainContent) mainContent.classList.remove('main-content-blur');
-    });
-    document.addEventListener('mousemove', function(e) {
-      if (e.clientX < 30) {
-        sidebar.classList.add('show');
-        if(mainContent) mainContent.classList.add('main-content-blur');
-      }
-    });
-  </script>
 </body>
 </html>

@@ -1,91 +1,200 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Museum Indonesia TMII - Travel Budaya</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="MAIN.CSS">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Museum Indonesia - Travel Budaya</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="museum.css"/>
+  <link rel="stylesheet" href="museum.js"/>
 </head>
 <body>
-   
 
-    <!-- Hero Museum Indonesia -->
-    <section class="hero d-flex align-items-center justify-content-center text-center" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80'); min-height: 350px;">
-        <div class="container hero-content">
-            <h1 class="display-3 fw-bold animate-fadein">Museum Indonesia TMII</h1>
-            <p class="lead animate-fadein" style="animation-delay:0.3s">Menjelajahi kekayaan budaya dan sejarah Indonesia di TMII</p>
+<!-- Hero Section -->
+<section class="hero-img-container position-relative text-center">
+  <img src="Museum-Indonesia-TMII-Jakarta-1536x864.jpg" class="img-fluid w-100 hero-img" alt="Museum Indonesia TMII">
+  <div class="hero-text position-absolute top-50 start-50 translate-middle text-white">
+    <h1 class="display-3 fw-bold">Museum Indonesia</h1>
+    <p class="lead">Menelusuri Kekayaan Budaya Nusantara dalam Satu Tempat</p>
+  </div>
+</section>
+
+<!-- Konten Utama -->
+<main class="container my-5">
+  <h2 class="text-center mb-4">10 Spot Budaya di Museum Indonesia TMII</h2>
+  <div class="row g-4">
+    <!-- Spot 1 -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow">
+        <img src="patung 2.jpeg" class="card-img-top" alt="Patung">
+        <div class="card-body">
+          <h5 class="card-title">Patung</h5>
+          <p class="card-text">Saat menjelajahi lantai bawah Museum Indonesia di TMII, saya menjumpai sebuah patung kayu yang sangat menarik perhatian. Patung ini menggambarkan sosok seorang petani tua dengan ekspresi wajah yang penuh keteguhan. Ia mengenakan caping lebar sebagai pelindung dari terik matahari dan memegang tongkat panjang yang menandakan bahwa ia sedang menggembala atau bekerja di sawah. Di sekeliling kakinya tampak sekumpulan bebek, yang merepresentasikan hubungan erat antara petani dan hewan ternak dalam kehidupan pedesaan.
+
+Patung ini tidak hanya menampilkan keterampilan tinggi dalam seni pahat kayu, tetapi juga menyiratkan nilai-nilai budaya yang dalam. Sosok petani menjadi simbol dari kerja keras, kesederhanaan, dan kedekatan dengan alam. Tekstur kayu yang alami dan detail pahatan yang halus membuat karya ini terasa hidup dan penuh makna.
+
+Melalui patung ini, pengunjung diajak untuk merefleksikan peran penting para petani dalam kehidupan masyarakat Indonesia serta menghargai warisan budaya yang tertanam kuat dalam kehidupan sehari-hari.</p>
         </div>
-    </section>
-
-    <!-- Konten Museum Indonesia -->
-    <main class="container my-5">
-        <div class="row g-4">
-            <div class="col-md-12">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h3 class="card-title text-success">Tentang Museum Indonesia</h3>
-                        <ul class="list-group list-group-flush mb-3">
-                            <li class="list-group-item"><strong>Lokasi:</strong> Kompleks TMII, Jakarta Timur</li>
-                            <li class="list-group-item"><strong>Diresmikan:</strong> 20 April 1980</li>
-                            <li class="list-group-item"><strong>Arsitektur:</strong> Bergaya Bali, tiga lantai</li>
-                            <li class="list-group-item"><strong>Koleksi:</strong> Pakaian adat, kerajinan, alat musik, rumah adat miniatur, dan benda budaya dari seluruh Indonesia</li>
-                            <li class="list-group-item"><strong>Fungsi:</strong> Edukasi, pelestarian budaya, wisata sejarah</li>
-                        </ul>
-                        <h5 class="mt-4">Fasilitas & Aktivitas:</h5>
-                        <ul>
-                            <li>Pameran tetap dan temporer</li>
-                            <li>Pertunjukan budaya</li>
-                            <li>Tur edukasi</li>
-                            <li>Galeri foto dan diorama</li>
-                            <li>Toko suvenir</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Google Maps Lokasi Museum Indonesia TMII -->
-    <section class="container mb-5">
-        <h4 class="text-center mb-3">Lokasi Museum Indonesia di TMII</h4>
-        <div class="ratio ratio-16x9">
-            <iframe 
-                src="https://www.google.com/maps?q=Museum+Indonesia+TMII&output=embed"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </section>
-
-    <!-- Sidebar Start -->
-<!-- ...existing code... -->
-<nav id="sidebar" class="bg-light border-end p-3 shadow-sm" style="min-width:250px;">
-  <span class="fw-bold fs-5" style="color:#00d5f3;">ARUZ</span>
-  <!-- Beranda di bawah Travel Budaya dan di atas Eksplorasi Daerah -->
-
-    <a href="MAIN.HTML" class="nav-link fw-bold" style="color:#0d6efd;">Beranda</a>
-  </li>
-  <ul class="nav flex-column">
-    <li class="nav-item">
-      <a class="nav-link fw-semibold" data-bs-toggle="collapse" href="#menuDaerah" role="button" style="color:#0d6efd;">Eksplorasi Daerah</a>
-      <div class="collapse show ps-3" id="menuDaerah">
-        <a href="dki.jakarta.html" class="nav-link">DKI Jakarta</a>
-        <a href="jawa barat.html" class="nav-link">Jawa Barat</a>
-        <a href="MUSEUM INDONESIA.HTML" class="nav-link">Museum Indonesia</a>
-        <a href="Perilaku Ekonomi.html" class="nav-link">Perilaku Ekonomi</a>
       </div>
-    </li>
-    <li class="nav-item">
-      <a href="#anggota" class="nav-link fw-semibold">Anggota Kelompok</a>
-    </li>
-    <li class="nav-item">
-      <a href="LKPD.HTML" class="nav-link fw-semibold">LKPD</a>
-    </li>
-  </ul>
-</nav>
-<!-- ...existing code... -->
-<!-- Sidebar End -->
+    </div>
 
-<!-- Tambahkan style dan script berikut sebelum </body> -->
+    <!-- Spot 2 -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow">
+        <img src="tenun 2.jpeg" class="card-img-top" alt="batik">
+        <div class="card-body">
+          <h5 class="card-title">Alat Tenun</h5>
+          <p class="card-text">Saya menjumpai alat tenun tradisional ini di Museum Indonesia TMII yang terletak di lantai dua. Alat ini merupakan warisan budaya yang digunakan secara manual untuk menghasilkan kain tenun ikat. Teknik ini banyak dijumpai di wilayah-wilayah timur Indonesia, seperti Nusa Tenggara Timur.
+
+Kain yang sedang diproses pada alat ini merupakan kain tenun ikat dengan motif khas yang terdiri dari pola geometris dan floral. Motif-motif seperti belah ketupat, garis simetris, serta bentuk tumbuhan merupakan simbol-simbol yang umum dijumpai. Motif belah ketupat sering dimaknai sebagai lambang perlindungan dan keseimbangan, sementara motif flora menggambarkan hubungan manusia dengan alam.
+
+Warna-warna yang digunakan pada kain ini biasanya berasal dari pewarna alami, seperti akar, daun, dan kulit kayu. Dominasi warna merah, coklat, dan ungu tua memperlihatkan teknik pewarnaan yang telah diwariskan secara turun-temurun. Kain seperti ini memiliki nilai penting dalam upacara adat, sebagai simbol status sosial, dan sering dikenakan dalam momen-momen sakral oleh masyarakat setempat..</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spot 3 -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow">
+        <img src="Sejarah.jpeg" class="card-img-top" alt="Busana Adat">
+        <div class="card-body">
+          <h5 class="card-title">Nenek Moyang Nusantara</h5>
+          <p class="card-text">Di Museum Indonesia TMII, saya menemukan visual edukatif yang menjelaskan proses evolusi manusia serta keberagaman ras dan suku bangsa. Gambar-gambar ini menggambarkan tahapan evolusi dari Homo erectus, manusia purba yang hidup ratusan ribu tahun lalu, hingga manusia modern awal. Homo erectus dikenal sebagai manusia yang pertama kali mampu berjalan tegak dan menggunakan api.
+
+Evolusi berlanjut ke manusia modern awal yang kemudian berkembang menjadi berbagai ras yang kita kenal saat ini. Di antaranya adalah ras Mongoloid yang menyebar ke wilayah Asia Timur dan Asia Tenggara, serta ras Australomelanesid yang banyak mendiami kawasan Papua dan sebagian Kepulauan Pasifik.
+
+Panel ini juga menampilkan ilustrasi beragam wajah dari berbagai suku bangsa di Indonesia. Ini menunjukkan bahwa meskipun berasal dari nenek moyang yang sama, manusia telah berkembang dan menyebar ke berbagai wilayah, membentuk keragaman budaya, bahasa, serta tradisi yang sangat kaya.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spot 4 -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow">
+        <img src="indo1.jpeg" class="card-img-top" alt="Miniatur Rumah Adat">
+        <div class="card-body">
+          <h5 class="card-title">Kebudayaan</h5>
+          <p class="card-text">Di balik kaca ini ada dua jenis benda budaya Indonesia yang super unik. Di sebelah kiri ada Patung Cili, patung tradisional dari Sumatera yang biasa dipakai sebagai simbol kesuburan dan keberuntungan. Patungnya dihias dengan ornamen yang detail dan penuh warna, kelihatan megah dan berwibawa banget!
+
+Terus di sebelah kanan ada Wayang Bima, tokoh dari cerita Mahabharata. Bima dikenal sebagai sosok yang kuat, berani, dan jujur. Wayangnya terbuat dari kulit yang dilukis dan dipakai buat pertunjukan wayang kulit tradisional — biasanya pake layar dan lampu supaya bayangannya bisa kelihatan.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spot 5 -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow">
+        <img src="alat mu.jpeg" class="card-img-top" alt="Senjata Tradisional">
+        <div class="card-body">
+          <h5 class="card-title">alat musik</h5>
+          <p class="card-text">Di sisi kiri ada alat musik pukul besar, kemungkinan itu Tifa dari Papua atau Maluku. Cara mainnya dipukul pakai tangan, dan biasanya dipakai buat ngiringin tarian atau upacara adat. Suaranya kuat dan ritmis banget!
+
+Terus ada alat musik petik seperti Sasando dari Nusa Tenggara Timur, yang bentuknya melingkar dan dibuat dari daun lontar. Maininnya dipetik, mirip gitar, tapi suara yang keluar lebih lembut dan khas.
+
+Ada juga alat musik tiup dan gesek dari Kalimantan, Sulawesi, dan daerah lainnya. Semuanya punya suara dan fungsi yang berbeda. Tapi yang pasti, setiap alat ini punya cerita dan nilai budaya yang penting buat masyarakatnya.
+
+</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spot 6 -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow">
+        <img src="Hinggi Pahudu.jpeg" class="card-img-top" alt="Wayang">
+        <div class="card-body">
+          <h5 class="card-title">Hindi Padugu</h5>
+          <p class="card-text">Namanya Hinggi Pahudu, kain tradisional dari Sumba Timur, Nusa Tenggara Timur. Bahannya dari katun yang dipilin tangan dan diwarnai pakai pewarna alami. Tapi yang bikin spesial, motif yang disebut Patuala Ratu ini cuma boleh dipakai sama para tetua adat, khususnya pas mereka pimpin upacara kematian buat kaum bangsawan dan raja.
+
+Motifnya punya filosofi tinggi banget. Garis-garis geometris yang saling terhubung itu ngelambangin hubungan antar manusia, juga hubungan manusia dengan alam sekitar. Jadi bukan sekadar hiasan, tapi kayak peta nilai kehidupan versi kain.
+
+Yang lebih dalam lagi, kain ini juga jadi semacam ‘pengingat’ buat masyarakat adat supaya tetap hidup sesuai dengan norma dan ajaran agama mereka.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spot 7 -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow">
+        <img src="kesenian topeng.jpeg" class="card-img-top" alt="Patung">
+        <div class="card-body">
+          <h5 class="card-title">Kesenian Topeng</h5>
+          <p class="card-text">Topeng ini berasal dari Bali dan dipakai dalam pertunjukan sakral yang berkaitan dengan ajaran Hindu. Dari tampilannya aja udah kelihatan penuh wibawa—warna-warni, dengan ekspresi wajah yang kuat dan tatapan tajam, ada juga simbol mata ketiga di dahinya. Nah, simbol itu lambang dari Dewa Siwa sebagai dewa penghancur sekaligus pencipta dalam mitologi Hindu.
+
+Biasanya, topeng ini dipakai dalam tarian atau ritual khusus di pura atau acara keagamaan. Tapi bukan sembarang orang bisa memainkannya—harus yang udah terlatih dan paham nilai spiritualnya. Karena itu, topeng ini bukan cuma seni, tapi juga dianggap sakral.
+
+Bentuk dan ornamen topengnya juga punya filosofi, dari rambut yang menjulang ke atas sampai hiasan di sekeliling wajahnya. Semua punya makna tersendiri yang menggambarkan kekuatan, kesucian, dan kebijaksanaan Siwa sebagai sosok pelindung dan penghancur kejahatan.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spot 8 -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow">
+        <img src="batik songket.jpeg" class="card-img-top" alt="Kesenian Rakyat">
+        <div class="card-body">
+          <h5 class="card-title">Batik Songket</h5>
+          <p class="card-text">Di dalam etalase berlabel Wastra Nusantara, terpajang dengan anggun berbagai kain tradisional Indonesia yang mencerminkan kekayaan budaya dan keragaman suku bangsa. Dua jenis kain yang paling menonjol dalam koleksi ini adalah batik dan songket.
+
+Batik, dengan motif-motif simbolis yang penuh makna, berasal dari berbagai daerah seperti Yogyakarta, Solo, dan Pekalongan. Teknik pembuatannya yang rumit menggunakan malam (lilin) dan pewarna alami menjadikannya lebih dari sekadar kain—batik adalah warisan budaya yang telah diakui UNESCO sebagai Warisan Budaya Tak Benda Dunia. Setiap motif memiliki filosofi tersendiri, mulai dari harapan akan kemakmuran, keselamatan, hingga simbol kekuasaan dan kebijaksanaan.
+
+Sementara itu, songket merupakan kain tenun tradisional yang ditenun dengan benang emas atau perak. Umumnya ditemukan di daerah Sumatra dan sebagian Kalimantan, songket menggambarkan kemewahan dan status sosial tinggi. Dalam budaya Melayu dan Minangkabau, songket digunakan pada upacara adat dan pernikahan, menandakan keanggunan dan nilai luhur leluhur yang masih dijunjung tinggi hingga kini.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spot 9 -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow">
+        <img src="tengkorak.jpeg" class="card-img-top" alt="Kerajinan Tradisional">
+        <div class="card-body">
+          <h5 class="card-title">Tengkorak Sangiran</h5>
+          <p class="card-text">Tengkorak Homo erectus yang dikenal sebagai Sangiran 17 atau PVIII (Pithecanthropus VIII) adalah salah satu penemuan paling penting dalam sejarah paleoantropologi Indonesia. Ditemukan pada tahun 1969 oleh dua pemuda lokal, Tukimin dan Towikromo, fosil ini berasal dari situs Sangiran, Jawa Tengah, sebuah kawasan yang telah lama diakui sebagai situs warisan dunia oleh UNESCO karena kekayaan arkeologinya.
+
+Sangiran 17 memiliki keistimewaan karena merupakan temuan tengkorak dan bagian wajah Homo erectus yang paling lengkap di Asia Tenggara. Tengkorak ini menunjukkan kapasitas otak sekitar 870–1.100 cc, memberikan gambaran yang lebih utuh tentang evolusi struktur otak dan wajah manusia purba. Fosil ini ditemukan di lapisan tanah Formasi Kabuh, yang diperkirakan berusia 800.000 hingga 700.000 tahun silam</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spot 10 -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow">
+        <img src="relief-nusantara.jpg" class="card-img-top" alt="Relief Budaya">
+        <div class="card-body">
+          <h5 class="card-title">Relief Budaya Nusantara</h5>
+          <p class="card-text">Dinding dengan relief menggambarkan aktivitas masyarakat Indonesia dari masa ke masa.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Sidebar Navigasi -->
+  <nav id="sidebar" class="bg-light border-end p-3 shadow-sm" style="min-width:250px;">
+      <span class="fw-bold fs-5" style="color:#00d5f3;">ARUZ</span>
+      <!-- Beranda di bawah Travel Budaya dan di atas Eksplorasi Daerah -->
+       <a href="MAIN.HTML" class="nav-link fw-bold" style="color:#0d6efd;">Beranda</a>
+      <a class="nav-link fw-semibold" data-bs-toggle="collapse" href="#menuDaerah" role="button">Eksplorasi Daerah</a>
+  </li>
+        <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" data-bs-toggle="collapse" href="#menuDaerah" role="button" style="color:#0d6efd;">Eksplorasi Daerah</a>
+          <div class="collapse show ps-3" id="menuDaerah">
+            <a href="dki.jakarta.html" class="nav-link">DKI Jakarta</a>
+            <a href="jawa barat.html" class="nav-link">Jawa Barat</a>
+            <a href="MUSEUM INDONESIA.HTML" class="nav-link">Museum Indonesia</a>
+            <a href="Perilaku Ekonomi.html" class="nav-link">Perilaku Ekonomi</a>
+          </div>
+        </li>
+        <li class="nav-item">
+        
+        <li class="nav-item">
+          <a href="LKPD.HTML" class="nav-link fw-semibold">LKPD</a>
+        </li>
+      </ul>
+    </nav>
+
+<!-- Sidebar Style & Script -->
 <style>
   #sidebar {
     position: fixed;
@@ -131,13 +240,5 @@
   });
 </script>
 
-    <!-- Footer -->
-    <footer class="footer text-center">
-        <div class="container">
-            <p class="mb-0">&copy; 2025 Travel Budaya | Kelompok 8</p>
-        </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js for main.js"></script>
 </body>
 </html>
