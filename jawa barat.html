@@ -11,23 +11,6 @@
 
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
-        <div class="container">
-            <a class="navbar-brand" href="MAIN.HTML">Travel Budaya</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="MAIN.HTML">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="dki.jakarta.html">DKI Jakarta</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="jawa barat.html">Jawa Barat</a></li>
-                    <li class="nav-item"><a class="nav-link" href="MUSEUM INDONESIA.HTML">Museum Indonesia</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
     <!-- Hero Jawa Barat -->
    <section class="hero-img-container position-relative text-center">
@@ -211,3 +194,77 @@ Latar belakang dinding dihiasi dengan kolase foto dan gambar tokoh-tokoh seni da
         </div>
     </div>
 </main>
+
+<!-- Sidebar Start -->
+<nav id="sidebar" class="bg-light border-end p-3 shadow-sm" style="min-width:250px;">
+  <h4 class="fw-bold mb-3">Travel Budaya</h4>
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link fw-semibold" data-bs-toggle="collapse" href="#menuDaerah" role="button">Eksplorasi Daerah</a>
+      <div class="collapse show ps-3" id="menuDaerah">
+        <a href="dki.jakarta.html" class="nav-link">DKI Jakarta</a>
+        <a href="jawa barat.html" class="nav-link">Jawa Barat</a>
+        <a href="MUSEUM INDONESIA.HTML" class="nav-link">Museum Indonesia</a>
+        <a href="Perilaku Ekonomi.html" class="nav-link">Perilaku Ekonomi</a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="#anggota" class="nav-link fw-semibold">Anggota Kelompok</a>
+    </li>
+    <li class="nav-item">
+      <a href="LKPD.HTML" class="nav-link fw-semibold">LKPD</a>
+    </li>
+    <li class="nav-item">
+      <a href="MAIN.HTML" class="nav-link fw-semibold">Beranda</a>
+    </li>
+  </ul>
+</nav>
+<!-- Sidebar End -->
+
+<!-- Tambahkan style dan script berikut sebelum </body> -->
+<style>
+  #sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+    z-index: 1000;
+  }
+  #sidebar.show {
+    transform: translateX(0);
+  }
+  .main-content-blur {
+    filter: blur(2px);
+    pointer-events: none;
+  }
+  @media (max-width: 768px) {
+    #sidebar {
+      min-width: 70vw;
+    }
+  }
+  body {
+    padding-left: 0 !important;
+  }
+</style>
+<script>
+  const sidebar = document.getElementById('sidebar');
+  const mainContent = document.querySelector('main');
+  sidebar.addEventListener('mouseenter', () => {
+    sidebar.classList.add('show');
+    if(mainContent) mainContent.classList.add('main-content-blur');
+  });
+  sidebar.addEventListener('mouseleave', () => {
+    sidebar.classList.remove('show');
+    if(mainContent) mainContent.classList.remove('main-content-blur');
+  });
+  document.addEventListener('mousemove', function(e) {
+    if (e.clientX < 30) {
+      sidebar.classList.add('show');
+      if(mainContent) mainContent.classList.add('main-content-blur');
+    }
+  });
+</script>
+</body>
+</html>

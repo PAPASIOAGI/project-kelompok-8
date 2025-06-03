@@ -12,12 +12,15 @@
   <!-- Splash Screen -->
   <div id="splash" style="position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:white;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 0.8s;">
     <img src="TMII_Logo_-_Blue.svg.png" alt="TMII Logo" style="width:300px;animation:zoomIn 1.2s cubic-bezier(.68,-0.55,.27,1.55);">
-    <h3 style="margin-top:20px;animation:fadeIn 1.2s ease-in;color:#333;">Kelompok 8 Anjungan Jawa Barat dan DKI Jakarta</h3>
+    <div style="display:flex;align-items:center;margin-top:20px;">
+      <img src="Document from Novianto Mardalis 😇🫰.png" alt="TMII Mini" style="width:32px;height:32px;margin-right:10px;animation:fadeIn 1.2s ease-in;">
+      <h3 style="margin:0;animation:fadeIn 1.2s ease-in;color:#333;">Kelompok 8 Anjungan Jawa Barat dan DKI Jakarta</h3>
+    </div>
   </div>
 
   <div class="d-flex flex-column flex-md-row">
     <!-- Sidebar -->
-    <nav class="bg-light border-end p-3 shadow-sm" style="min-width:250px;">
+    <nav id="sidebar" class="bg-light border-end p-3 shadow-sm" style="min-width:250px;">
       <h4 class="fw-bold mb-3">Travel Budaya</h4>
       <ul class="nav flex-column">
         <li class="nav-item">
@@ -39,7 +42,32 @@
       </ul>
     </nav>
 
-    <!-- Main Content -->
+    <!-- Main Content -->    <!-- ...existing code... -->
+    <!-- Sidebar Start -->
+    <nav id="sidebar" class="bg-light border-end p-3 shadow-sm" style="min-width:250px;">
+      <h4 class="fw-bold mb-3">
+        <a href="MAIN.HTML" class="text-decoration-none text-dark">Travel Budaya</a>
+      </h4>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" data-bs-toggle="collapse" href="#menuDaerah" role="button">Eksplorasi Daerah</a>
+          <div class="collapse show ps-3" id="menuDaerah">
+            <a href="dki.jakarta.html" class="nav-link">DKI Jakarta</a>
+            <a href="jawa barat.html" class="nav-link">Jawa Barat</a>
+            <a href="MUSEUM INDONESIA.HTML" class="nav-link">Museum Indonesia</a>
+            <a href="Perilaku Ekonomi.html" class="nav-link">Perilaku Ekonomi</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="#anggota" class="nav-link fw-semibold">Anggota Kelompok</a>
+        </li>
+        <li class="nav-item">
+          <a href="LKPD.HTML" class="nav-link fw-semibold">LKPD</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Sidebar End -->
+    <!-- ...existing code... -->
     <main class="flex-grow-1 p-4">
       <section class="text-center mb-5">
         <h1 class="display-5 fw-bold">Eksplorasi Budaya Indonesia</h1>
@@ -162,16 +190,26 @@
     });
   </script>
   <style>
-    @keyframes zoomIn {
-      0% { transform: scale(0.5); opacity: 0; }
-      60% { transform: scale(1.1); opacity: 1; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
+    
   </style>
+  <script>
+  const sidebar = document.getElementById('sidebar');
+  const mainContent = document.querySelector('main');
+  sidebar.addEventListener('mouseenter', () => {
+    sidebar.classList.add('show');
+    if(mainContent) mainContent.classList.add('main-content-blur');
+  });
+  sidebar.addEventListener('mouseleave', () => {
+    sidebar.classList.remove('show');
+    if(mainContent) mainContent.classList.remove('main-content-blur');
+  });
+  // Tampilkan sidebar saat mouse di sisi kiri layar
+  document.addEventListener('mousemove', function(e) {
+    if (e.clientX < 30) {
+      sidebar.classList.add('show');
+      if(mainContent) mainContent.classList.add('main-content-blur');
+    }
+  });
+  </script>
 </body>
 </html>
