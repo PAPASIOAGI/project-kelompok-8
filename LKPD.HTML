@@ -29,6 +29,30 @@
     .bottom-navbar a:hover {
       text-decoration: underline;
     }
+    #sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      transform: translateX(-100%);
+      transition: transform 0.3s;
+      z-index: 1000;
+    }
+    #sidebar.show {
+      transform: translateX(0);
+    }
+    .main-content-blur {
+      filter: blur(2px);
+      pointer-events: none;
+    }
+    @media (max-width: 768px) {
+      #sidebar {
+        min-width: 70vw;
+      }
+    }
+    body {
+      padding-left: 0 !important;
+    }
   </style>
 </head>
 <body style="overflow-x:hidden;">
@@ -112,5 +136,23 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.querySelector('main');
+    sidebar.addEventListener('mouseenter', () => {
+      sidebar.classList.add('show');
+      if(mainContent) mainContent.classList.add('main-content-blur');
+    });
+    sidebar.addEventListener('mouseleave', () => {
+      sidebar.classList.remove('show');
+      if(mainContent) mainContent.classList.remove('main-content-blur');
+    });
+    document.addEventListener('mousemove', function(e) {
+      if (e.clientX < 30) {
+        sidebar.classList.add('show');
+        if(mainContent) mainContent.classList.add('main-content-blur');
+      }
+    });
+  </script>
 </body>
 </html>
