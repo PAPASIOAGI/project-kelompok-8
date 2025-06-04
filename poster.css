@@ -1,0 +1,60 @@
+body {
+  background-color: #ffffff;
+  color: #212529;
+  padding: 2rem;
+}
+
+.custom-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.img-cover {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.card-img-top {
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .img-cover {
+    height: auto;
+  }
+}
+
+/* Modal gambar */
+#imageModal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: center;
+}
+
+#imageModal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+}
+
+#imageModal .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#imageModal .close-btn:hover {
+  color: #ccc;
+}
