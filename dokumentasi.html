@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dokumentasi - Travel Budaya</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    .doc-section-title {
+      background: #00d5f3;
+      color: #fff;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
+    .doc-img {
+      object-fit: cover;
+      width: 100%;
+      height: 400px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+    }
+
+    .doc-sikat {
+      object-fit: cover;
+      width: 95%;
+      height: 330px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+    }
+
+
+    .doc-img:hover {
+      box-shadow: 0 4px 24px #00d5f355;
+    }
+    /* Modal fullscreen image */
+    #imageModal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.8);
+      align-items: center;
+      justify-content: center;
+    }
+    #imageModal img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px #0008;
+    }
+    .close-btn {
+      position: absolute;
+      top: 24px;
+      right: 40px;
+      color: #fff;
+      font-size: 2.5rem;
+      cursor: pointer;
+      z-index: 2100;
+      font-weight: bold;
+      text-shadow: 0 2px 8px #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="d-flex flex-column flex-md-row">
+    <!-- Sidebar Start -->
+    <nav id="sidebar" class="bg-light border-end p-3 shadow-sm" style="min-width:250px;">
+      <div class="d-flex align-items-center mb-3">
+        <span class="fw-bold fs-5" style="color:#00d5f3;">ARUZ</span>
+      </div>
+      <ul class="nav flex-column">
+        <li class="nav-item"><a href="MAIN.HTML" class="nav-link fw-semibold">Beranda</a></li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" data-bs-toggle="collapse" href="#menuDaerah" role="button" aria-expanded="true">Eksplorasi Daerah</a>
+          <div class="collapse show ps-3" id="menuDaerah">
+            <a href="dki.jakarta.html" class="nav-link">DKI Jakarta</a>
+            <a href="jawa barat.html" class="nav-link">Jawa Barat</a>
+            <a href="MUSEUM INDONESIA.HTML" class="nav-link">Museum Indonesia</a>
+            <a href="Perilaku Ekonomi.html" class="nav-link">Perilaku Ekonomi</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="#anggota" class="nav-link fw-semibold">Anggota Kelompok</a></li>
+        <li class="nav-item"><a href="LKPD.HTML" class="nav-link fw-semibold">LKPD</a></li>
+        <li class="nav-item"><a href="LKPD.HTML" class="nav-link fw-semibold active">Kembali</a></li>
+      </ul>
+    </nav>
+    <!-- Sidebar End -->
+
+    <!-- Main Content Start -->
+    <div class="container my-5">
+      <h2 class="fw-bold text-center mb-5">Dokumentasi Kegiatan</h2>
+
+      <!-- Video Dokumentasi -->
+      <div class="mb-5">
+        <span class="doc-section-title">Video Dokumentasi</span>
+        <div class="ratio ratio-16x9 rounded overflow-hidden shadow mb-4">
+          <video controls autoplay muted="false" style="width:100%;height:100%;" id="videoDokumentasi">
+            <source src="KELOMPOK_8.mp4" type="video/mp4">
+            Browser Anda tidak mendukung tag video.
+          </video>
+        </div>
+      </div>
+      <!-- End Video Dokumentasi -->
+
+      <!-- DKI Jakarta -->
+      <div class="mb-5">
+        <span class="doc-section-title">DKI Jakarta</span>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col"><img src="IMG_615289.jpg" alt="DKI Jakarta 1" class="doc-img" onclick="showImageModal(this.src)"></div>
+          <div class="col"><img src="IMG_725245.jpg" alt="DKI Jakarta 2" class="doc-img" onclick="showImageModal(this.src)"></div>
+          <div class="col"><img src="IMG_8272772_72828.jpg" alt="DKI Jakarta 3" class="doc-img" onclick="showImageModal(this.src)"></div>
+          <div class="col"><img src="IMG_20250522_132238.jpg" alt="DKI Jakarta 4" class="doc-img" onclick="showImageModal(this.src)"></div>
+          <div class="col"><img src="IMG_20250522_134124.jpg" alt="DKI Jakarta 5" class="doc-img" onclick="showImageModal(this.src)"></div>
+          <div class="col"><img src="IMG_20250522_134214.jpg" alt="DKI Jakarta 6" class="doc-img" onclick="showImageModal(this.src)"></div>
+        </div>
+      </div>
+
+      <!-- Jawa Barat -->
+      <div class="mb-5">
+        <span class="doc-section-title">Jawa Barat</span>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col"><img src="ICL.jpg" alt="Jawa Barat 1" class="doc-sikat" onclick="showImageModal(this.src)"></div>
+          <div class="col"><img src="IMG-20250524-WA0051.jpg" alt="Jawa Barat 2" class="doc-img" onclick="showImageModal(this.src)"></div>
+          <div class="col"><img src="IMG-20250522-WA0026.jpg" alt="Jawa Barat 3" class="doc-img" onclick="showImageModal(this.src)"></div>
+          <div class="col"><img src="IMG-20250522-WA0026.jpg" alt="Jawa Barat 4" class="doc-img" onclick="showImageModal(this.src)"></div>
+          <div class="col"><img src="IMG_20250522_083501.jpg" alt="Jawa Barat 5" class="doc-img" onclick="showImageModal(this.src)"></div>
+          <div class="col"><img src="IMG-20250524-WA0043.jpg" alt="Jawa Barat 6" class="doc-img" onclick="showImageModal(this.src)"></div>
+        </div>
+      </div>
+
+      <!-- Museum Indonesia -->
+      <div class="mb-5">
+        <span class="doc-section-title">Museum Indonesia</span>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col"><img src="IMG_20250522_110615.jpg" alt="Museum Indonesia 1" class="doc-img" onclick="showImageModal(this.src)"></div>
+          <div class="col"><img src="Desktop Screenshot 2025.06.04 - 22.24.40.53.png" alt="Museum Indonesia 2" class="doc-img" onclick="showImageModal(this.src)"></div>
+          <div class="col"><img src="IMG_7252829.jpg" alt="Museum Indonesia 3" class="doc-img" onclick="showImageModal(this.src)"></div>
+          <div class="col"><img src="IMG_6182828.jpg" alt="Museum Indonesia 4" class="doc-img" onclick="showImageModal(this.src)"></div>
+          <div class="col"><img src="IMG_20250522_105133.jpg" alt="Museum Indonesia 5" class="doc-img" onclick="showImageModal(this.src)"></div>
+          <div class="col"><img src="IMG-20250524-WA0036.jpg" alt="Museum Indonesia 6" class="doc-img" onclick="showImageModal(this.src)"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Main Content End -->
+  </div>
+
+  <!-- Modal Gambar Fullscreen -->
+  <div id="imageModal" onclick="hideImageModal()">
+    <span class="close-btn" onclick="hideImageModal()">×</span>
+    <img id="modalImage" src="" alt="Fullscreen Image" />
+  </div>
+
+  <script>
+    function showImageModal(src) {
+      document.getElementById('modalImage').src = src;
+      document.getElementById('imageModal').style.display = 'flex';
+    }
+    function hideImageModal() {
+      document.getElementById('imageModal').style.display = 'none';
+      document.getElementById('modalImage').src = '';
+    }
+  </script>
+</body>
+</html>
