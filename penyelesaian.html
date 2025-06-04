@@ -30,14 +30,44 @@
   </style>
 </head>
 <body>
-  <div class="container my-5">
-    <div class="row g-4 align-items-center custom-card bg-white p-3">
-      <div class="col-md-6">
-        <img src="guide.jpeg" alt="Sewa Sepeda dan Skuter" class="img-fluid rounded img-cover" />
+  <div class="d-flex flex-column flex-md-row">
+    <!-- Sidebar Selalu Tampil -->
+    <nav id="sidebar" class="bg-light border-end p-3 shadow-sm" style="min-width:250px;">
+      <div class="d-flex align-items-center mb-3">
+        <span class="fw-bold fs-5" style="color:#00d5f3;">ARUZ</span>
       </div>
-      <div class="col-md-6">
-        <h3 class="fw-bold">Penyewaan Sepeda dan Skuter</h3>
-        <p>Perjalanan kami dimulai di SMKN 8 Jakarta, sebuah sekolah menengah kejuruan di Jakarta
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a href="MAIN.HTML" class="nav-link fw-semibold">Beranda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" data-bs-toggle="collapse" href="#menuDaerah" role="button" aria-expanded="true">Eksplorasi Daerah</a>
+          <div class="collapse show ps-3" id="menuDaerah">
+            <a href="dki.jakarta.html" class="nav-link">DKI Jakarta</a>
+            <a href="jawa barat.html" class="nav-link">Jawa Barat</a>
+            <a href="MUSEUM INDONESIA.HTML" class="nav-link">Museum Indonesia</a>
+            <a href="Perilaku Ekonomi.html" class="nav-link">Perilaku Ekonomi</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="#anggota" class="nav-link fw-semibold">Anggota Kelompok</a>
+        </li>
+        <li class="nav-item">
+          <a href="LKPD.HTML" class="nav-link fw-semibold">LKPD</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Konten Utama -->
+    <main class="flex-grow-1 p-4">
+      <div class="container my-5">
+        <div class="row g-4 align-items-center custom-card bg-white p-3">
+          <div class="col-md-6">
+            <img src="guide.jpeg" alt="Sewa Sepeda dan Skuter" class="img-fluid rounded img-cover" />
+          </div>
+          <div class="col-md-6">
+            <h3 class="fw-bold">Penyewaan Sepeda dan Skuter</h3>
+            <p>Perjalanan kami dimulai di SMKN 8 Jakarta, sebuah sekolah menengah kejuruan di Jakarta
 Selatan. Sekolah ini berdiri pada tahun 1964, nama lama SMKN 8 Jakarta adalah SMEA 4
 Negeri Jakarta. Dulunya, kawasan ini merupakan bagian dari Pasar Minggu, Jakarta Selatan,
 dan pada masa kolonial, kawasan ini dikenal dengan nama Kalibata Lenteng Agung. Meski
@@ -68,19 +98,41 @@ sebagian kecil wilayah Bekasi Barat, Jawa Barat. Bagian pertama yang dibangun ad
 Cikunir–Cakung pada tahun 1990. Setelah Tol Jagorawi dibuka pada tahun 1978.
 pemerintah merencanakan jaringan tol yang lebih luas, termasuk JORR, untuk mengurangi
 kemacetan di dalam kota. Studi kelayakan proyek ini dilakukan oleh JICA (Japan
-International Cooperation Agency).
-
-
-
-
-
-
-
-
-        </p>
+International Cooperation Agency).</p>
+          </div>
+        </div>
       </div>
-    </div>
+    </main>
   </div>
+
+  <!-- Style Sidebar -->
+  <style>
+    #sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      min-width: 250px;
+      z-index: 1000;
+      /* Hapus/komentari baris di bawah agar sidebar selalu tampil */
+      /* transform: translateX(-100%); */
+      /* transition: transform 0.3s; */
+    }
+    .flex-grow-1 {
+      margin-left: 250px; /* agar konten tidak tertutup sidebar */
+    }
+    @media (max-width: 768px) {
+      #sidebar {
+        min-width: 70vw;
+      }
+      .flex-grow-1 {
+        margin-left: 70vw;
+      }
+    }
+    body {
+      padding-left: 0 !important;
+    }
+  </style>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
