@@ -53,7 +53,7 @@
     <div class="row g-4">
       <!-- 1 -->
       <div class="col-md-6">
-        <div class="card h-100 shadow">
+        <div class="card h-100 shadow" data-bs-toggle="tooltip" title="Anjungan Betawi">
           <img src="anjungan dki jakarta.jpg" class="card-img-top img-fluid" alt="Anjungan Jakarta">
           <div class="card-body">
             <h5 class="card-title">Anjungan betawi</h5>
@@ -68,7 +68,7 @@
       </div>
       <!-- 2 -->
       <div class="col-md-6">
-        <div class="card h-100 shadow">
+        <div class="card h-100 shadow" data-bs-toggle="tooltip" title="Rumah Kebaya">
           <img src="Rumah Kebaya.jpeg" class="card-img-top img-fluid" alt="Rumah Kebaya">
           <div class="card-body">
             <h5 class="card-title">Rumah Kebaya</h5>
@@ -183,34 +183,7 @@ kampung di tepi sungai menjadi pusat pemerintahan dan perdagangan yang penting d
       <!-- 10 -->
       
       <!-- Card Peninggalan Islam -->
-<div class="col-md-12">
-  <div class="card h-100 shadow border-primary">
-    <img src="WhatsApp Image 2025-06-04 at 21.42.21.jpeg" class="card-img-top" alt="Keraton Kasepuhan">
-    <div class="card-img-top">
-      <h5 class="card-title text-primary">Peninggalan Islam</h5>
-      <p class="card-text">
-       Di Anjungan DKI Jakarta, kita mungkin tidak menemukan satu pun peninggalan fisik yang langsung
-mencerminkan warisan Islam. Namun, salah satu penyambut tamu di sana membagikan kisah
-tentang seorang tokoh besar yang tidak bisa dilepaskan dari sejarah Islam dan asal-usul kota
-Jakartadialah Fatahillah.
-Fatahillah, atau Faletehan, adalah seorang panglima dan ulama dari Kesultanan Demak yang
-dikenal luas sebagai pejuang Islam di tanah Jawa. Pada tahun 1527, ia memimpin pasukan untuk
-mengusir penjajah Portugis dari pelabuhan Sunda Kelapa. Kemenangannya tidak hanya bermakna
-militer, tetapi juga spiritual dan simbolis. Ia kemudian mengganti nama Sunda Kelapa menjadi
-Jayakarta, yang berarti kemenangan yang sempurna.
-Kemenangan Fatahillah menandai awal penyebaran nilai-nilai Islam di wilayah yang kini menjadi
-pusat ibu kota Indonesia. Ia tidak hanya dikenal sebagai tokoh penakluk, tetapi juga pembawa
-ajaran Islam yang penuh kedamaian dan keadilan, serta tokoh yang mempersatukan masyarakat
-melalui semangat religius dan nasionalisme.
-Hingga kini, tanggal kemenangannya, 22 Juni 1527, diperingati sebagai Hari Jadi Kota
-Jakartasebuah bukti bahwa jejak Fatahillah masih hidup dalam ingatan dan identitas kota ini,
-meskipun tak tampak secara fisik di anjungan.
-Cerita ini mengingatkan kita bahwa sejarah Islam di Jakarta bukan hanya tertulis di batu dan
-bangunan, tetapi juga hidup dalam narasi dan semangat yang diwariskan dari generasi ke generasi.
-      </p>
-    </div>
-  </div>
-</div>
+
 
   <!-- Sidebar Start -->
 <nav id="sidebar" class="bg-light border-end p-3 shadow-sm" style="min-width:250px;">
@@ -297,7 +270,13 @@ bangunan, tetapi juga hidup dalam narasi dan semangat yang diwariskan dari gener
     }
   });
 
-  
+  // Aktifkan semua tooltip Bootstrap
+  document.addEventListener('DOMContentLoaded', function () {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+      new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  });
 </script>
 
   <!-- Bootstrap JS -->

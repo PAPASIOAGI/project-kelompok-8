@@ -1,73 +1,30 @@
-/* jawa barat.css */
-
-body {
-    background-color: #ffffff;
-    font-family: 'Segoe UI', Arial, sans-serif;
-}
-
-h2 {
-    color: #198754;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.card {
-    border-radius: 18px;
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: none;
-}
-
-.card:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 8px 32px rgba(25,135,84,0.15);
-    cursor: pointer;
-}
-
 .card-img-top {
-    border-top-left-radius: 18px;
-    border-top-right-radius: 18px;
-    object-fit: cover;
-    height: 260px;
+  object-fit: cover;
+  width: 100%;
+  height: 220px;
 }
 
-.card-title {
-    color: #198754;
-    font-size: 1.25rem;
-    font-weight: 600;
+#sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+  z-index: 1000;
 }
 
-.card-text {
-    color: #333;
-    font-size: 1rem;
+#sidebar.show {
+  transform: translateX(0);
 }
 
-.navbar {
-    border-radius: 0 0 18px 18px;
-}
-
-.hero {
-    min-height: 320px;
-    background-size: cover;
-    background-position: center;
-    color: #ffffff;
-    position: relative;
-    border-radius: 0 0 24px 24px;
-    margin-bottom: 2rem;
-}
-
-
-.hero-content {
-    background: rgba(25,135,84,0.55);
-    padding: 2rem 1rem;
-    border-radius: 18px;
-    display: inline-block;
+.main-content-blur {
+  filter: blur(2px);
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
-    .card-img-top {
-        height: 160px;
-    }
-    .hero {
-        min-height: 180px;
-    }
+  #sidebar {
+    min-width: 70vw;
+  }
 }
