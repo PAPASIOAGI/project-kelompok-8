@@ -1,24 +1,47 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anjungan DKI Jakarta - Travel Budaya</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="dki jakarta.css">
-  <link rel="stylesheet" href="dki jakarta.js">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anjungan Jawa Barat - Travel Budaya</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="jawa barat.css" />
+  <script src="jawa barat.js" defer></script>
+  <style>
+    .card-img-top {
+      object-fit: cover;
+      width: 100%;
+      height: 220px;
+    }
+    #sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      transform: translateX(-100%);
+      transition: transform 0.3s;
+      z-index: 1000;
+    }
+    #sidebar.show {
+      transform: translateX(0);
+    }
+    .main-content-blur {
+      filter: blur(2px);
+      pointer-events: none;
+    }
+    @media (max-width: 768px) {
+      #sidebar {
+        min-width: 70vw;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Hero Section -->
-  <!-- ...existing code... -->
-  <!-- Sidebar Start -->
-  <!-- ...existing code... -->
+
+<!-- Sidebar -->
 <nav id="sidebar" class="bg-light border-end p-3 shadow-sm" style="min-width:250px;">
   <span class="fw-bold fs-5" style="color:#00d5f3;">ARUZ</span>
-  <!-- Beranda di bawah Travel Budaya dan di atas Eksplorasi Daerah -->
- 
-    <a href="MAIN.HTML" class="nav-link fw-bold" style="color:#0d6efd;">Beranda</a>
-  </li>
+  <a href="MAIN.HTML" class="nav-link fw-bold" style="color:#0d6efd;">Beranda</a>
   <ul class="nav flex-column">
     <li class="nav-item">
       <a class="nav-link fw-semibold" data-bs-toggle="collapse" href="#menuDaerah" role="button" style="color:#0d6efd;">Eksplorasi Daerah</a>
@@ -30,256 +53,212 @@
       </div>
     </li>
     <li class="nav-item">
-      <a href="#anggota" class="nav-link fw-semibold">Anggota Kelompok</a>
-    </li>
-    <li class="nav-item">
       <a href="LKPD.HTML" class="nav-link fw-semibold">LKPD</a>
     </li>
   </ul>
 </nav>
-<!-- ...existing code... -->
-  <!-- Sidebar End -->
-  <!-- ...existing code... -->  <section class="hero-img-container position-relative text-center">
-  <img src="anjungan jakarta.jpg" class="img-fluid w-100 hero-img" alt="Museum Indonesia TMII">
+
+<!-- Hero -->
+<section class="hero-img-container position-relative text-center">
+  <img src="anjungan jakarta.jpg" class="img-fluid w-100 hero-img" alt="Anjungan DKI Jakarta" />
   <div class="hero-text position-absolute top-50 start-50 translate-middle text-white">
-    <h1 class="display-3 fw-bold">Anjungan Jakarta</h1>
-    <p class="lead">Mari Menelusuri Budaya Jakarta</p>
+    <h1 class="display-3 fw-bold">Anjungan DKI Jakarta</h1>
+    <p class="lead">Mengenal lebih dekat budaya dan kekayaan DKI Jakarta di TMII</p>
   </div>
 </section>
 
-  <!-- Content Section -->
-  <main class="container my-5">
-    <h2 class="text-center mb-4">10 Spot Budaya di Anjungan DKI Jakarta</h2>
-    <div class="row g-4">
-      <!-- 1 -->
-      <div class="col-md-6">
-        <div class="card h-100 shadow" data-bs-toggle="tooltip" title="Anjungan Betawi">
-          <img src="anjungan dki jakarta.jpg" class="card-img-top img-fluid" alt="Anjungan Jakarta">
-          <div class="card-body">
-            <h5 class="card-title">Anjungan betawi</h5>
-            <p class="card-text">Di Taman Mini Indonesia Indah, berdiri bangunan ikonik milik Provinsi DKI Jakarta yang langsung mencuri perhatian. 
-                Dengan bentuk atap unik yang terinspirasi dari Rumah Kebaya—rumah tradisional khas Betawi—bangunan ini menggambarkan kearifan lokal warga Jakarta,
-                 terutama dalam hal keramahan dan keterbukaan.
+<!-- Konten -->
+<main class="container my-5">
+  <h2 class="text-center mb-4">10 Spot Budaya di Anjungan DKI Jakarta</h2>
+  <div class="row g-4" id="card-container"></div>
+</main>
 
-
-            </p>
-          </div>
-        </div>
+<!-- Modal -->
+<div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="infoModalLabel">Judul</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
       </div>
-      <!-- 2 -->
-      <div class="col-md-6">
-        <div class="card h-100 shadow" data-bs-toggle="tooltip" title="Rumah Kebaya">
-          <img src="Rumah Kebaya.jpeg" class="card-img-top img-fluid" alt="Rumah Kebaya">
-          <div class="card-body">
-            <h5 class="card-title">Rumah Kebaya</h5>
-            <p class="card-text">Rumah Kebaya adalah salah satu bentuk rumah tradisional Betawi yang paling dikenal.
-                 Namanya berasal dari bentuk atapnya yang menyerupai lipatan kebaya saat dilihat dari samping.
-                  Ciri khas rumah ini terletak pada serambinya yang luas, tempat keluarga berkumpul dan berinteraksi dengan tetangga—sebuah simbol kehidupan sosial masyarakat Betawi yang hangat dan terbuka.
-
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- 3 -->
-      <div class="col-md-6">
-        <div class="card h-100 shadow">
-          <img src="alat musik.jpeg" class="card-img-top img-fluid" alt="Gambang Kromong">
-          <div class="card-body">
-            <h5 class="card-title">Gambang Kromong</h5>
-            <p class="card-text">Di balik kaca Anjungan DKI Jakarta, tersimpan rapi satu set alat musik tradisional yang menjadi kebanggaan warga Betawi: 
-                Gambang Kromong. Perpaduan unik antara unsur gamelan Jawa dan musik Tionghoa ini menghasilkan irama khas yang riang dan meriah,
-                 sering kali mengiringi pertunjukan seni seperti Lenong dan Tari Topeng.
-                </p>
-          </div>
-        </div>
-      </div>
-      <!-- 4 -->
-      <div class="col-md-6">
-        <div class="card h-100 shadow">
-          <img src="topeng.jpeg" class="card-img-top img-fluid" alt="Topeng Betawi">
-          <div class="card-body">
-            <h5 class="card-title">Topeng Betawi</h5>
-            <p class="card-text">
-                Topeng Betawi merupakan bagian dari kesenian tradisional Tari Topeng Betawi. S
-                etiap topeng mewakili karakter berbeda, seperti Panji (bijak dan tenang), Samba (ceria), Patih (tegas), Tumenggung (gagah), dan Kelana (angkuh dan jahat). Tak hanya sebagai alat pertunjukan, 
-                topeng-topeng ini juga menyimpan nilai budaya dan filosofi masyarakat Betawi.
-                
-                
-                
-                .</p>
-          </div>
-        </div>
-      </div>
-      <!-- 5 -->
-      <div class="col-md-6">
-        <div class="card h-100 shadow">
-          <img src="betawi.JPG" class="card-img-top img-fluid" alt="Gerbang Anjungan">
-          <div class="card-body">
-            <h5 class="card-title">Baju Jakarta</h5>
-            <p class="card-text">Laki-laki memakai baju koko putih, jas hitam, sarung kotak-kotak, dan peci hitam, yang merupakan busana sehari-hari pria Betawi, terutama untuk kegiatan keagamaan atau acara resmi.
-Perempuan mengenakan kebaya encim berwarna cerah lengkap dengan kerudung merah, mencerminkan keanggunan perempuan Betawi dalam budaya peranakan Tionghoa dan Melayu yang berbaur dengan budaya lokal.
-
-Busana ini menunjukkan identitas masyarakat Betawi yang religius, sopan, dan menjunjung tinggi nilai tradisi.
- Dipamerkan di Anjungan DKI Jakarta, TMII, 
-pakaian ini menjadi bagian dari pelestarian budaya asli ibu kota.</p>
-          </div>
-        </div>
-      </div>
-      <!-- 6 -->
-      <div class="col-md-6">
-        <div class="card h-100 shadow">
-          <img src="furniute jakarta.jpg" class="card-img-top img-fluid" alt="Miniatur Kota Tua">
-          <div class="card-body">
-            <h5 class="card-title">Furniture Jakarta</h5>
-            <p class="card-text">Diorama ini menggambarkan wajah modern kota Jakarta dengan sistem transportasi terintegrasi yang mencakup jalan tol bertingkat, kereta layang (LRT/monorel), serta infrastruktur transportasi publik lainnya.
-
-Latar belakang berupa gedung-gedung pencakar langit dan Monumen Nasional (Monas) memperkuat kesan metropolitan ibu kota. Miniatur ini merepresentasikan visi pembangunan Jakarta sebagai kota pintar (smart city) dengan sistem mobilitas perkotaan yang efisien dan ramah lingkungan.
-
-Diorama ini tidak hanya menunjukkan bentuk fisik infrastruktur, tetapi juga menyampaikan semangat modernisasi dan penataan kota yang terus berkembang demi menjawab tantangan urbanisasi.
-
-Dipajang di Anjungan DKI Jakarta, TMII, miniatur ini menjadi simbol kemajuan dan komitmen ibu kota dalam membangun masa depan yang berkelanjutan.</p>
-          </div>
-        </div>
-      </div>
-      <!-- 7 -->
-      <div class="col-md-6">
-        <div class="card h-100 shadow">
-          <img src="batik.webp" class="card-img-top img-fluid" alt="Tanjidor">
-          <div class="card-body">
-            <h5 class="card-title">Batik Betawi</h5>
-            <p class="card-text">Batik Betawi merupakan salah satu warisan budaya khas Jakarta yang mencerminkan identitas dan kekayaan budaya masyarakat Betawi. Berbeda dengan batik dari daerah lain, Batik Betawi dikenal melalui motif-motifnya yang ceria, penuh warna, dan memiliki makna simbolis yang erat kaitannya dengan kehidupan masyarakat urban Jakarta.
-
-Motif-motif Batik Betawi sering kali menampilkan ikon budaya lokal seperti Ondel-Ondel, Monas, Ciliwung, rumah kebaya, serta alat musik tradisional seperti tanjidor. Warna-warna cerah seperti merah, oranye, dan kuning banyak digunakan, mencerminkan semangat, kegembiraan, dan keberagaman yang menjadi ciri khas masyarakat Betawi.</p>
-          </div>
-        </div>
-      </div>
-      <!-- 8 -->
-      <div class="col-md-6">
-        <div class="card h-100 shadow">
-          <img src="Hitam.jpeg" class="card-img-top img-fluid" alt="Lenong">
-          <div class="card-body">
-            <h5 class="card-title">Sejarah Jakarta</h5>
-            <p class="card-text">Ada beberapa bangunan penting seperti benteng kecil, rumah-rumah pejabat VOC, dan
-sungai yang jadi jalur utama transportasi. Setahun kemudian, tahun 1619, terlihat
-perubahan besar setelah Belanda mengambil alih wilayah ini dan mulai membangun kota
-dengan struktur pertahanan yang lebih jelas serta pelabuhan yang mulai ramai oleh kapalkapal dagang. Masuk ke tahun 1682, kota Batavia mulai terlihat lebih tertata, dengan
-pembagian lahan, jalan-jalan lurus, dan sistem kanal yang menunjukkan gaya arsitektur dan
-tata kota Eropa. Peta tahun 1733 menampilkan kota yang makin berkembang, dengan detail
-bangunan pemerintahan, rumah-rumah elite Belanda, dan suasana kota yang sibuk.
-Puncaknya di peta tahun 1853, Batavia tampak seperti kota modern zaman kolonial, dengan
-jalan-jalan lebar, gedung-gedung besar, dan aktivitas masyarakat yang padat. Perjalanan
-waktu yang tergambar lewat lima peta ini menunjukkan transformasi besar dari sebuah
-kampung di tepi sungai menjadi pusat pemerintahan dan perdagangan yang penting di 
-
-
-
-
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- 9 -->
-      
-      <!-- 10 -->
-      
-      <!-- Card Peninggalan Islam -->
-
-
-  <!-- Sidebar Start -->
-<nav id="sidebar" class="bg-light border-end p-3 shadow-sm" style="min-width:250px;">
-  <h4 class="fw-bold mb-3">Travel Budaya</h4>
-  <ul class="nav flex-column">
-    <li class="nav-item">
-      <a class="nav-link fw-semibold" data-bs-toggle="collapse" href="#menuDaerah" role="button">Eksplorasi Daerah</a>
-      <div class="collapse show ps-3" id="menuDaerah">
-        <a href="dki.jakarta.html" class="nav-link">DKI Jakarta</a>
-        <a href="jawa barat.html" class="nav-link">Jawa Barat</a>
-        <a href="MUSEUM INDONESIA.HTML" class="nav-link">Museum Indonesia</a>
-        <a href="Perilaku Ekonomi.html" class="nav-link">Perilaku Ekonomi</a>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a href="#anggota" class="nav-link fw-semibold">Anggota Kelompok</a>
-    </li>
-    <li class="nav-item">
-      <a href="LKPD.HTML" class="nav-link fw-semibold">LKPD</a>
-    </li>
-    <li class="nav-item">
-      <a href="MAIN.HTML" class="nav-link fw-semibold">Beranda</a>
-    </li>
-  </ul>
-</nav>
-<!-- Sidebar End -->
-
-<!-- Tanda Sidebar -->
-<div id="sidebar-indicator"
-     style="position:fixed;top:50%;left:0;transform:translateY(-50%);z-index:1040;pointer-events:none;">
-  <div style="width:10px;height:48px;background:linear-gradient(180deg,#ee4949 80%,#fff0 100%);border-radius:0 8px 8px 0;box-shadow:1px 0 6px #00d5f355;"></div>
-  <div style="margin-left:2px;margin-top:2px;width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:10px solid #00d5f3;"></div>
+      <div class="modal-body" id="infoModalBody">Konten lengkap akan muncul di sini.</div>
+    </div>
+  </div>
 </div>
 
-<!-- Tambahkan style dan script berikut sebelum </body> -->
-<style>
-  #sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    transform: translateX(-100%);
-    transition: transform 0.3s;
-    z-index: 1000;
-  }
-  #sidebar.show {
-    transform: translateX(0);
-  }
-  .main-content-blur {
-    filter: blur(2px);
-    pointer-events: none;
-  }
-  @media (max-width: 768px) {
-    #sidebar {
-      min-width: 70vw;
-    }
-  }
-  body {
-    padding-left: 0 !important;
-  }
-
-  .card-img-top {
-    object-fit: contain;
-    width: 100%;
-    height: 220px; /* Atur tinggi sesuai kebutuhan, misal 220px */
-    background: #f8f9fa;
-  }
-</style>
+<!-- Script -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  const sidebar = document.getElementById('sidebar');
-  const mainContent = document.querySelector('main');
-  sidebar.addEventListener('mouseenter', () => {
+const narasiList = [
+  `Anjungan Jakarta di Taman Mini Indonesia Indah merupakan representasi budaya masyarakat Betawi yang kaya akan sejarah, tradisi, dan kearifan lokal. Anjungan ini menampilkan rumah adat khas Betawi tipe Bapang, yang memiliki ciri khas atap pelana, serambi depan yang luas, serta ukiran dan warna-warna cerah yang mencerminkan semangat masyarakatnya.
+
+Selain rumah adat, area anjungan juga dilengkapi dengan bangunan pendukung dan taman yang memperkuat nuansa khas Betawi. Di dalamnya, terdapat berbagai koleksi benda budaya seperti pakaian adat, alat musik tanjidor, perlengkapan pernikahan tradisional, hingga miniatur ondel-ondel yang menjadi ikon budaya Betawi.
+
+Anjungan Jakarta tidak hanya menampilkan bangunan dan benda fisik, tetapi juga kerap menjadi lokasi penyelenggaraan pertunjukan budaya seperti tari topeng Betawi, gambang kromong, hingga pertunjukan lenong. Semua ini bertujuan untuk memperkenalkan dan melestarikan budaya Betawi kepada masyarakat luas.
+
+Sebagai bagian dari Taman Mini Indonesia Indah, anjungan ini menjadi sarana edukasi dan pelestarian, mengingatkan kita akan pentingnya menjaga identitas budaya di tengah perkembangan zaman yang semakin modern.
+
+`,
+
+  `Miniatur ini menggambarkan sistem transportasi modern Jakarta, kota metropolitan yang terus berkembang sebagai pusat ekonomi dan pemerintahan Indonesia. Di tengah latar gedung-gedung pencakar langit yang menjulang, tampak representasi dari infrastruktur transportasi masa kini dan masa depan yang terintegrasi dan efisien.
+
+Terlihat jaringan jalan layang, jalur kendaraan umum seperti bus dan kereta layang, serta stasiun modern yang menggambarkan upaya kota Jakarta dalam mengatasi kemacetan dan meningkatkan mobilitas warganya. Miniatur ini juga menekankan pentingnya perencanaan tata kota yang berpihak pada konektivitas dan kenyamanan publik.
+
+Simulasi ini bukan hanya visualisasi infrastruktur, tetapi juga simbol dari transformasi Jakarta menuju kota cerdas dan berkelanjutan. Dengan integrasi berbagai moda transportasi seperti MRT, LRT, dan jalan tol, kota ini diarahkan menjadi lebih ramah lingkungan dan efisien dalam menghadapi tantangan urbanisasi.
+
+`,
+
+
+
+  `Gambar ini memperlihatkan seperangkat alat musik tradisional gamelan, yang merupakan warisan budaya Indonesia yang kaya akan nilai seni dan filosofi. Gamelan terdiri dari berbagai instrumen seperti gong, kenong, bonang, kempul, dan kendang, yang dimainkan secara harmonis untuk menghasilkan alunan musik yang khas dan mendalam.
+
+Alat-alat musik ini biasanya digunakan dalam berbagai pertunjukan seni tradisional Betawi maupun Jawa, seperti wayang, tari tradisional, hingga upacara adat. Setiap instrumen memiliki fungsi dan peran tersendiri dalam mengatur ritme dan dinamika musik.
+
+Dihiasi dengan ukiran dan warna emas yang elegan, gamelan ini tidak hanya memiliki nilai musikal, tetapi juga nilai estetika yang tinggi. Keberadaannya di anjungan ini menjadi simbol pelestarian budaya, sekaligus bentuk penghargaan terhadap seni musik tradisional yang telah menjadi identitas bangsa selama berabad-abad.`,
+
+
+
+
+
+  ` Batik Betawi merupakan salah satu warisan budaya yang merepresentasikan identitas khas masyarakat Jakarta. Di antara berbagai motif yang digunakan, salah satu yang paling ikonik adalah motif ondel-ondel. Ondel-ondel sendiri merupakan boneka raksasa tradisional yang biasa ditampilkan dalam pertunjukan seni jalanan maupun perayaan budaya Betawi.
+
+Motif ondel-ondel dalam batik Betawi tidak hanya menjadi hiasan, tetapi juga mengandung makna simbolis. Sosok ondel-ondel melambangkan pelindung masyarakat dari gangguan roh jahat, serta menjadi lambang semangat dan keceriaan warga Betawi. Dalam desain batik, motif ini sering dipadukan dengan elemen lain seperti tugu Monas, rumah adat, dan flora khas Jakarta, menciptakan corak yang hidup dan penuh warna.
+
+Batik Betawi dengan motif ondel-ondel biasanya dibuat dengan teknik cap maupun tulis, dan digunakan dalam berbagai acara, baik formal maupun budaya. Kehadiran batik ini tidak hanya menampilkan keindahan visual, tetapi juga memperkuat rasa cinta terhadap kebudayaan lokal di tengah arus modernisasi.`,
+
+
+
+  `Pakaian adat Betawi mencerminkan perpaduan budaya yang kaya, hasil dari akulturasi antara budaya Melayu, Arab, Tionghoa, dan Eropa yang telah lama membentuk identitas masyarakat Jakarta. Dalam foto ini, tampak sepasang busana adat Betawi yang biasa digunakan dalam acara resmi dan upacara pernikahan tradisional.
+
+Pakaian pria terdiri dari baju sadariah berwarna gelap yang dipadukan dengan sarung kotak yang disampirkan di pinggang, serta peci hitam sebagai penutup kepala, mencerminkan kesan sederhana namun berwibawa. Sementara itu, pakaian wanita menggunakan kebaya encim berwarna cerah yang dihiasi sulaman halus, dipadukan dengan kain batik bermotif geometris atau flora, menggambarkan kelembutan dan keanggunan perempuan Betawi.
+
+Busana ini bukan hanya sekadar pakaian, tetapi juga simbol dari nilai-nilai kesopanan, kehormatan, dan kearifan lokal yang dijunjung tinggi dalam masyarakat Betawi. Keberadaannya di ruang pamer menjadi pengingat akan pentingnya melestarikan tradisi di tengah arus modernisasi yang terus berkembang.
+  `,
+  
+
+`Topeng Betawi merupakan salah satu bentuk kesenian tradisional yang telah berkembang sejak masa kolonial di wilayah Jakarta dan sekitarnya. Seni topeng ini umumnya ditampilkan dalam pertunjukan tari, teater rakyat, dan upacara adat. Selain sebagai hiburan, topeng Betawi juga mengandung nilai-nilai simbolik dan filosofis yang mencerminkan kehidupan masyarakat Betawi.
+
+Topeng Betawi terdiri dari berbagai jenis karakter, masing-masing mewakili sifat dan peran tertentu dalam cerita yang dibawakan. Beberapa jenis topeng yang sering digunakan antara lain:
+
+Topeng Panji, menggambarkan tokoh yang halus, sopan, dan bijaksana. Biasanya mewakili pahlawan atau tokoh utama yang berbudi luhur.
+
+Topeng Jingga, mewakili karakter yang keras kepala, lucu, atau nakal. Tokoh ini sering berperan sebagai penghibur dalam pertunjukan.
+
+Topeng Patih, menggambarkan pemimpin atau panglima perang, biasanya berwajah tegas dan gagah.
+
+Topeng Rahwana atau Buta, mewakili karakter jahat atau antagonis, digunakan untuk menampilkan konflik dalam cerita.
+
+Topeng-topeng ini dibuat dari kayu, lalu dicat dan dihias dengan detail sesuai karakter yang dibawakan. Selain bentuk wajah, ekspresi dan warna topeng juga membantu penonton memahami watak tokohnya.
+
+Seni topeng Betawi tidak hanya menampilkan gerak tari dan dialog, tetapi juga diiringi musik khas seperti tanjidor atau gamelan Betawi. Dengan unsur komedi, sindiran sosial, dan pesan moral, pertunjukan topeng Betawi menjadi cerminan dinamika kehidupan masyarakat urban tempo dulu.
+
+Hingga kini, kesenian topeng Betawi tetap dijaga keberadaannya sebagai bagian dari identitas budaya Jakarta yang patut dilestarikan.
+`,
+
+
+
+
+  `Rumah kebaya adalah salah satu bentuk rumah adat khas masyarakat Betawi yang mencerminkan gaya arsitektur tradisional dengan sentuhan lokal yang kuat. Disebut "kebaya" karena bentuk atapnya menyerupai lipatan kebaya, pakaian tradisional wanita Betawi. Atap rumah ini berbentuk pelana dengan bagian depan dan belakang yang melipat ke bawah, menciptakan kesan elegan namun tetap sederhana.
+
+Ciri khas rumah kebaya terletak pada teras yang luas di bagian depan rumah, yang berfungsi sebagai tempat berkumpul, menerima tamu, dan bersantai. Ruangan dalam rumah biasanya terdiri dari ruang depan, ruang tengah, dan kamar tidur, dengan sekat-sekat sederhana yang memudahkan sirkulasi udara.
+
+Material yang digunakan umumnya berasal dari kayu dan bambu, menciptakan suasana sejuk dan alami yang sesuai dengan iklim tropis. Selain itu, rumah kebaya sering dihiasi dengan ukiran atau ornamen bernuansa Betawi, menambah nilai estetika sekaligus memperkuat identitas budaya pemiliknya.
+
+Rumah kebaya bukan hanya tempat tinggal, tetapi juga simbol kehidupan sosial masyarakat Betawi yang menjunjung tinggi nilai kekeluargaan, keterbukaan, dan kebersamaan. Keberadaan rumah ini menjadi salah satu warisan budaya arsitektur yang penting untuk terus dijaga dan dilestarikan.
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  `,
+
+
+
+  
+`Kujang adalah senjata tradisional khas masyarakat Sunda yang memiliki nilai lebih dari sekadar alat pertahanan. Senjata ini berbentuk unik, dengan lengkungan dan bilah tajam yang khas, mencerminkan perpaduan antara fungsi, estetika, dan makna simbolis yang mendalam. Berasal dari kata “ku” yang berarti ‘milik’ dan “jang” yang berarti ‘manusia mulia’, Kujang melambangkan kehormatan, kekuatan, dan kebijaksanaan. Diperkirakan telah ada sejak abad ke-8, Kujang awalnya digunakan sebagai alat pertanian, namun seiring waktu berkembang menjadi simbol spiritual, status sosial, bahkan senjata pusaka para bangsawan dan prajurit Kerajaan Pajajaran. Bentuk Kujang sangat bervariasi, seperti Kujang Ciung, Kujang Naga, Kujang Kudi, dan lainnya—masing-masing memiliki makna dan fungsi tersendiri. Lebih dari sekadar senjata, Kujang diyakini memiliki kekuatan magis dan digunakan dalam berbagai upacara adat serta penyimpanan pusaka. Kujang juga sering dipakai sebagai lambang dalam berbagai institusi di Jawa Barat, menegaskan identitas dan kebanggaan masyarakat Sunda terhadap warisan leluhur mereka. Kini, Kujang bukan hanya dikenang sebagai alat perang, tapi sebagai ikon budaya Sunda yang mencerminkan filosofi hidup: tegas dalam prinsip, tajam dalam berpikir, dan luhur dalam bertindak.`,
+
+
+
+
+
+
+  `Kain batik ini berasal dari Cirebon, sebuah daerah pesisir di Jawa Barat yang dikenal akan kekayaan budaya dan sejarahnya, terutama pengaruh kuat dari Keraton Kasepuhan dan Kanoman. Terlihat dalam motifnya yang khas, batik ini menampilkan perpaduan antara motif Mega Mendung dan Singa Barong, dua simbol penting dalam tradisi Cirebon.
+
+Mega Mendung, yang digambarkan seperti awan berlapis-lapis berwarna biru atau keabu-abuan, melambangkan kesabaran, keteduhan, dan kedalaman jiwa. Motif ini sangat terkenal dan menjadi identitas utama batik Cirebon. Sementara itu, Singa Barong, makhluk mitologi campuran antara singa, naga, dan burung, merupakan lambang kewibawaan dan kekuasaan. Singa Barong sering dikaitkan dengan kereta pusaka Keraton Kasepuhan yang digunakan dalam acara-acara sakral.
+
+Pewarnaan batik ini didominasi oleh warna-warna klasik seperti biru tua, kuning keemasan, dan hitam, yang menambah kesan agung dan spiritual. Pola yang simetris dan rumit mencerminkan keterampilan tinggi para pembatik serta nilai filosofi yang dalam.
+
+Batik Cirebon ini bukan hanya kain berhias motif, tetapi merupakan penyampai pesan budaya dan spiritualitas, menjembatani hubungan manusia dengan alam dan leluhur. Hingga kini, batik ini tetap dilestarikan dan dikenakan dalam berbagai upacara adat serta digunakan sebagai simbol kebanggaan masyarakat Cirebon.`,
+
+
+  
+
+  
+];
+
+const data = [
+  { title: "Anjungan DKI Jakarta", image: "anjungan jakarta.jpg" },
+  { title: "Furniture Jakarta", image: "furniute jakarta.jpg" },
+  { title: "Alat Musik", image: "alat musik.jpeg" },
+  { title: "Batik Betawi", image: "batik.webp" },
+  { title: "Baju Daerah", image: "betawi.jpg" },
+  { title: "Topeng Betawi", image: "topeng.jpeg" },
+  { title: "Rumah Kebaya", image: "rumah kebaya.jpeg" },
+ 
+];
+
+const cardContainer = document.getElementById('card-container');
+const infoModal = new bootstrap.Modal(document.getElementById('infoModal'));
+
+data.forEach((item, i) => {
+  const col = document.createElement('div');
+  col.className = 'col-md-6 col-lg-4';
+  col.innerHTML = `
+    <div class="card h-100 shadow-sm card-click" style="cursor:pointer;" data-index="${i}">
+      <img src="${item.image}" class="card-img-top" alt="${item.title}">
+      <div class="card-body">
+        <h5 class="card-title">${item.title}</h5>
+        <p class="card-text">${narasiList[i].slice(0, 100)}...</p>
+      </div>
+    </div>
+  `;
+  cardContainer.appendChild(col);
+});
+
+document.addEventListener('click', function(e) {
+  const card = e.target.closest('.card-click');
+  if (!card) return;
+  const index = parseInt(card.dataset.index);
+  document.getElementById('infoModalLabel').textContent = data[index].title;
+  document.getElementById('infoModalBody').textContent = narasiList[index];
+  infoModal.show();
+});
+
+// Sidebar auto-show
+const sidebar = document.getElementById('sidebar');
+const mainContent = document.querySelector('main');
+sidebar.addEventListener('mouseenter', () => {
+  sidebar.classList.add('show');
+  if (mainContent) mainContent.classList.add('main-content-blur');
+});
+sidebar.addEventListener('mouseleave', () => {
+  sidebar.classList.remove('show');
+  if (mainContent) mainContent.classList.remove('main-content-blur');
+});
+document.addEventListener('mousemove', function (e) {
+  if (e.clientX < 30) {
     sidebar.classList.add('show');
-    if(mainContent) mainContent.classList.add('main-content-blur');
-  });
-  sidebar.addEventListener('mouseleave', () => {
-    sidebar.classList.remove('show');
-    if(mainContent) mainContent.classList.remove('main-content-blur');
-  });
-  document.addEventListener('mousemove', function(e) {
-    if (e.clientX < 30) {
-      sidebar.classList.add('show');
-      if(mainContent) mainContent.classList.add('main-content-blur');
-    }
-  });
-
-  // Aktifkan semua tooltip Bootstrap
-  document.addEventListener('DOMContentLoaded', function () {
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    tooltipTriggerList.forEach(function (tooltipTriggerEl) {
-      new bootstrap.Tooltip(tooltipTriggerEl);
-    });
-  });
+    if (mainContent) mainContent.classList.add('main-content-blur');
+  }
+});
 </script>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
